@@ -1,0 +1,4999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Member Details</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+      /* =====================================================
+   MEMBER INFORMATION - FONT SIZE MATCH
+   Same size/proportion as Coverage History
+===================================================== */
+
+@media(max-width:700px){
+
+    /* ===============================
+       PROFILE CARD
+    =============================== */
+
+    .profile-text h2{
+        font-size:18px;
+        font-weight:400;
+    }
+
+    .profile-info{
+        font-size:12px;
+        line-height:1.8;
+    }
+
+    .profile-info span{
+        font-size:12px;
+    }
+
+
+    /* ===============================
+       MEMBER TABS
+    =============================== */
+
+    .member-tab{
+        font-size:13px;
+        padding:9px 13px;
+    }
+
+
+    /* ===============================
+       SECTION TITLES
+    =============================== */
+
+    .detail-section-title{
+        font-size:17px;
+        font-weight:400;
+    }
+
+    .address-title{
+        font-size:17px;
+        font-weight:400;
+    }
+
+    .contact-title{
+        font-size:17px;
+        font-weight:400;
+    }
+
+
+    /* ===============================
+       DETAILS TABLE
+    =============================== */
+
+    .detail-table{
+        font-size:16px;
+    }
+
+    .detail-table td{
+        font-size:16px;
+        padding:10px 6px;
+        line-height:1.5;
+    }
+
+    .detail-table td:first-child{
+        font-size:16px;
+    }
+
+    .detail-table td:last-child{
+        font-size:16px;
+    }
+
+
+    /* ===============================
+       UPDATE BUTTON
+    =============================== */
+
+    .update-button{
+        font-size:12px;
+        padding:8px 11px;
+    }
+
+
+    /* ===============================
+       COVERAGE HISTORY
+    =============================== */
+
+    .coverage-history{
+        padding:20px 22px 30px;
+    }
+
+    .coverage-title{
+        font-size:20px;
+        font-weight:400;
+    }
+
+    .coverage-latest span{
+        font-size:16px;
+        font-weight:400;
+    }
+
+    .coverage-dates span{
+        font-size:17px;
+        font-weight:400;
+    }
+
+    .coverage-dates strong{
+        font-size:17px;
+        font-weight:400;
+    }
+
+    .coverage-company{
+        font-size:18px;
+        font-weight:400;
+    }
+
+    .coverage-number{
+        font-size:16px;
+        font-weight:400;
+    }
+
+    .coverage-avatar{
+        width:55px;
+        height:55px;
+        font-size:21px;
+    }
+
+
+    /* ===============================
+       ADDRESS / CONTACT SPACING
+    =============================== */
+
+    .address-section{
+        padding:20px 22px 30px;
+    }
+
+    .details-section{
+        padding:20px 22px 30px;
+    }
+
+
+    /* ===============================
+       MAIN PAGE
+    =============================== */
+
+    .main-content{
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Montserrat",sans-serif;
+    background:#eaf6fc;
+    color:#555;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   FIXED HEADER
+===================================================== */
+
+.sticky-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.dashboard-header{
+    height:75px;
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+}
+
+.menu-icon{
+    border:none;
+    background:none;
+    font-size:30px;
+    color:#285a9c;
+    cursor:pointer;
+}
+
+.dashboard-actions{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:25px;
+    color:#285a9c;
+}
+
+.profile-icon{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    background:#ddd;
+
+    border:none;
+    padding:0;
+
+    cursor:pointer;
+}
+
+.profile-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* =====================================================
+   MEMBER INFO
+===================================================== */
+
+.member-info{
+    background:white;
+
+    padding:12px 25px 15px;
+
+    border-top:1px solid #eee;
+}
+
+.member-name{
+    font-size:19px;
+    font-weight:400;
+    color:#444;
+}
+
+.member-number{
+    font-size:16px;
+    margin-top:4px;
+}
+
+.member-date{
+    margin-top:7px;
+    font-size:15px;
+    color:#315a9c;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main-content{
+    width:100%;
+    max-width:1050px;
+
+    margin:0 auto;
+
+    padding:190px 20px 70px;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.member-title{
+    font-size:14px;
+    color:#526987;
+    margin-bottom:15px;
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.member-details{
+    background:white;
+
+    border-radius:6px;
+    overflow:hidden;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.16);
+
+    margin-bottom:15px;
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover{
+    height:145px;
+
+    background:
+    linear-gradient(
+        120deg,
+        #a9d8f3 0%,
+        #a9d8f3 27%,
+        #5eaddd 27%,
+        #5eaddd 45%,
+        #3497d1 45%,
+        #3497d1 63%,
+        #2784b9 63%,
+        #2784b9 70%,
+        #f3b176 70%,
+        #f3b176 100%
+    );
+}
+
+
+/* =====================================================
+   PROFILE CONTENT
+===================================================== */
+
+.profile-content{
+  display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 20px 18px;
+    position: relative;
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    margin-top:-38px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    background:#55a9df;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.profile-text{
+    padding-top:13px;
+}
+
+.profile-text h2{
+    margin:0 0 8px;
+
+    font-size:20px;
+    font-weight:400;
+
+    color:#555;
+}
+
+.profile-info{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    font-size:12px;
+    color:#777;
+}
+
+.profile-info span{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+
+/* =====================================================
+   MEMBER TABS
+===================================================== */
+
+.member-tabs{
+    display:flex;
+
+    gap:10px;
+
+    margin:12px 0 15px;
+}
+
+.member-tab{
+    border:none;
+
+    background:transparent;
+
+    color:#526987;
+
+    padding:8px 13px;
+
+    border-radius:5px;
+
+    font-family:"Montserrat";
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.member-tab.active{
+    background:#3159a2;
+
+    color:white;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+
+
+/* =====================================================
+   MEMBER DETAILS CARD
+===================================================== */
+
+.details-section{
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.detail-section-title{
+    font-size:14px;
+
+    color:#555;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #eee;
+
+    margin-bottom:15px;
+
+    margin-top:25px;
+}
+
+.detail-section-title:first-child{
+    margin-top:0;
+}
+
+.detail-section-title i{
+    color:#315a9c;
+
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   DETAILS TABLE
+===================================================== */
+
+.detail-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:12px;
+}
+
+.detail-table tr{
+    border-bottom:1px solid #eee;
+}
+
+.detail-table td{
+    padding:9px 8px;
+
+    vertical-align:top;
+}
+
+.detail-table td:first-child{
+    width:42%;
+
+    color:#777;
+
+    font-weight:400;
+}
+
+.detail-table td:last-child{
+    width:58%;
+
+    color:#555;
+
+    font-weight:400;
+}
+
+.status-active{
+    color:#29925b !important;
+    font-weight:500 !important;
+}
+
+
+/* =====================================================
+   ADDRESS
+===================================================== */
+
+.address-section{
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    margin-top:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+
+.address-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid #eee;
+
+    padding-bottom:14px;
+
+    margin-bottom:15px;
+}
+
+.address-title{
+    font-size:14px;
+    color:#555;
+}
+
+.address-title i{
+    color:#315a9c;
+    margin-right:7px;
+}
+
+.update-button{
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:7px 11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat";
+
+    font-size:10px;
+
+    cursor:pointer;
+}
+
+.update-button:hover{
+    background:#284c8c;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-title{
+    font-size:14px;
+
+    color:#555;
+
+    border-bottom:1px solid #eee;
+
+    padding-bottom:14px;
+
+    margin-top:25px;
+
+    margin-bottom:15px;
+}
+
+.contact-title i{
+    color:#315a9c;
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   COVERAGE HISTORY
+===================================================== */
+
+.coverage-section{
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    margin-top:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+
+.coverage-title{
+    font-size:14px;
+
+    color:#555;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #eee;
+
+    margin-bottom:25px;
+}
+
+.coverage-title i{
+    color:#315a9c;
+    margin-right:7px;
+}
+
+/* =====================================================
+   COVERAGE HISTORY - SSS STYLE
+===================================================== */
+
+.coverage-history{
+    background:#ffffff;
+    border-radius:6px;
+    padding:25px 40px 35px;
+    margin-top:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+
+/* TITLE */
+
+.coverage-title{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#eef1f4;
+    color:#526987;
+
+    padding:10px 15px;
+
+    border-radius:6px;
+
+    font-size:20px;
+    font-weight:400;
+}
+
+.coverage-title i{
+    font-size:23px;
+}
+
+
+/* LATEST */
+
+.coverage-latest{
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    margin:35px 0 45px;
+}
+
+.coverage-latest span{
+    background:#d8edf7;
+    color:#526987;
+
+    padding:8px 16px;
+
+    border-radius:5px;
+
+    font-size:16px;
+}
+
+.coverage-latest div{
+    flex:1;
+
+    border-top:2px dashed #dddddd;
+}
+
+
+/* TIMELINE ENTRY */
+
+.coverage-entry{
+    position:relative;
+
+    margin-left:45px;
+
+    padding-left:55px;
+    padding-bottom:45px;
+}
+
+
+/* VERTICAL LINE */
+
+.coverage-entry:not(:last-of-type)::after{
+    content:"";
+
+    position:absolute;
+
+    left:9px;
+    top:25px;
+
+    height:calc(100% - 5px);
+
+    width:2px;
+
+    background:#e0e0e0;
+}
+
+
+/* DOT */
+
+.timeline-dot{
+    position:absolute;
+
+    left:-1px;
+    top:0;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    z-index:2;
+}
+
+
+/* BLUE DOT */
+
+.coverage-entry.blue .timeline-dot{
+    background:#18a9d2;
+
+    border:5px solid #d9f7fc;
+}
+
+
+/* ORANGE DOT */
+
+.coverage-entry.orange .timeline-dot{
+    background:#efa313;
+
+    border:5px solid #fff0d5;
+}
+
+
+/* DATES */
+
+.coverage-dates{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+}
+
+.coverage-dates span{
+    display:block;
+
+    color:#444;
+
+    font-size:17px;
+
+    font-weight:400;
+
+    margin-bottom:6px;
+}
+
+.coverage-dates strong{
+    display:block;
+
+    color:#555;
+
+    font-size:17px;
+
+    font-weight:400;
+}
+
+
+/* COMPANY */
+
+.coverage-member{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+
+/* COMPANY INITIAL */
+
+.coverage-avatar{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:21px;
+}
+
+
+/* LITTELFUSE */
+
+.coverage-entry.blue .coverage-avatar{
+    background:#d9f7fc;
+    color:#29a8c5;
+}
+
+
+/* K&K */
+
+.coverage-entry.orange .coverage-avatar{
+    background:#fff0d5;
+    color:#e5a11c;
+}
+
+
+/* COMPANY NAME */
+
+.coverage-company{
+    color:#444;
+
+    font-size:18px;
+
+    font-weight:400;
+
+    line-height:1.3;
+}
+
+
+/* ER NUMBER */
+
+.coverage-number{
+    color:#555;
+
+    font-size:16px;
+
+    margin-top:5px;
+}
+
+
+/* END CHECK */
+
+.coverage-end{
+    margin-left:37px;
+
+    width:35px;
+    height:35px;
+
+    border:2px solid #dce1e5;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#dce1e5;
+
+    font-size:17px;
+}
+
+
+/* =====================================================
+   MOBILE COVERAGE
+===================================================== */
+
+@media(max-width:700px){
+
+    .coverage-history{
+        padding:20px 18px 30px;
+
+        margin-top:12px;
+
+        border-radius:4px;
+    }
+
+
+    .coverage-title{
+        font-size:12px;
+
+        padding:8px 10px;
+
+        gap:7px;
+    }
+
+    .coverage-title i{
+        font-size:14px;
+    }
+
+
+    .coverage-latest{
+        gap:12px;
+
+        margin:25px 0 35px;
+    }
+
+    .coverage-latest span{
+        padding:6px 10px;
+
+        font-size:10px;
+    }
+
+    .coverage-latest div{
+        border-top:1px dashed #ddd;
+    }
+
+
+    /* TIMELINE */
+
+    .coverage-entry{
+        margin-left:22px;
+
+        padding-left:38px;
+
+        padding-bottom:38px;
+    }
+
+
+    .coverage-entry:not(:last-of-type)::after{
+        left:6px;
+
+        top:18px;
+
+        height:calc(100% - 2px);
+
+        width:2px;
+    }
+
+
+    .timeline-dot{
+        left:-1px;
+
+        width:15px;
+        height:15px;
+    }
+
+
+    .coverage-entry.blue .timeline-dot{
+        border-width:4px;
+    }
+
+    .coverage-entry.orange .timeline-dot{
+        border-width:4px;
+    }
+
+
+    /* DATES */
+
+    .coverage-dates{
+        grid-template-columns:1fr 1fr;
+
+        gap:15px;
+    }
+
+    .coverage-dates span{
+        font-size:9px;
+
+        margin-bottom:4px;
+    }
+
+    .coverage-dates strong{
+        font-size:10px;
+
+        line-height:1.3;
+    }
+
+
+    /* COMPANY */
+
+    .coverage-member{
+        gap:10px;
+
+        margin-top:14px;
+    }
+
+    .coverage-avatar{
+        width:42px;
+        height:42px;
+
+        font-size:15px;
+    }
+
+    .coverage-company{
+        font-size:10px;
+
+        line-height:1.35;
+    }
+
+    .coverage-number{
+        font-size:9px;
+
+        margin-top:3px;
+    }
+
+
+    /* END */
+
+    .coverage-end{
+        margin-left:17px;
+
+        width:28px;
+        height:28px;
+
+        font-size:13px;
+    }
+
+}
+
+/* =====================================================
+   CALENDAR
+===================================================== */
+
+.calendar{
+    position:fixed;
+
+    right:0;
+
+    top:200px;
+
+    background:#b9dcff;
+
+    color:#285a9c;
+
+    padding:15px 13px;
+
+    border-radius:12px 0 0 12px;
+
+    font-size:25px;
+
+    z-index:900;
+
+    opacity:.85;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   APPOINTMENT MODAL
+===================================================== */
+
+.appointment-overlay{
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:11000;
+
+    padding:20px;
+}
+
+.appointment-overlay.show{
+    display:flex;
+}
+
+.appointment-box{
+    width:100%;
+
+    max-width:520px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:28px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+    position:relative;
+
+    animation:appointmentOpen .2s ease;
+}
+
+@keyframes appointmentOpen{
+
+    from{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.close-appointment{
+    position:absolute;
+
+    top:15px;
+    right:18px;
+
+    border:none;
+
+    background:none;
+
+    color:#777;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.close-appointment:hover{
+    color:#285a9c;
+}
+
+.appointment-box h2{
+    margin:0;
+
+    color:#315a9c;
+
+    font-size:20px;
+
+    font-weight:500;
+}
+
+.appointment-box h2 i{
+    margin-right:8px;
+}
+
+.appointment-box hr{
+    border:none;
+
+    border-top:1px solid #eee;
+
+    margin:18px 0;
+}
+
+.appointment-box h3{
+    margin:0 0 8px;
+
+    color:#555;
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+.appointment-box p{
+    margin:0 0 20px;
+
+    color:#777;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea{
+    width:100%;
+
+    padding:11px 12px;
+
+    margin-bottom:12px;
+
+    border:1px solid #d5d5d5;
+
+    border-radius:4px;
+
+    background:white;
+
+    color:#555;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    outline:none;
+}
+
+.appointment-box select:focus,
+.appointment-box input:focus,
+.appointment-box textarea:focus{
+    border-color:#5ca6d8;
+
+    box-shadow:0 0 0 2px rgba(92,166,216,.12);
+}
+
+.appointment-box textarea{
+    height:90px;
+
+    resize:none;
+}
+
+.next-btn{
+    width:100%;
+
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   SIDE MENU OVERLAY
+===================================================== */
+
+.menu-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+}
+
+.menu-overlay.open{
+    display:block;
+}
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+.side-menu{
+    position:fixed;
+
+    top:0;
+
+    left:-390px;
+
+    width:370px;
+
+    max-width:88%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.2);
+
+    transition:.3s ease;
+
+    overflow-y:auto;
+}
+
+.side-menu.open{
+    left:0;
+}
+
+.side-menu-header{
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    border-bottom:1px solid #eee;
+}
+
+.side-menu-header span{
+    font-size:25px;
+    color:#444;
+}
+
+.close-menu{
+    border:none;
+
+    background:none;
+
+    font-size:24px;
+
+    color:#999;
+
+    cursor:pointer;
+}
+
+.menu-items{
+    padding:15px 25px 30px;
+}
+
+.menu-item{
+    min-height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#315a9c;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    padding:10px;
+
+    border-radius:6px;
+}
+
+.menu-item:hover{
+    background:#eef6fc;
+}
+
+.menu-item i{
+    width:25px;
+
+    text-align:center;
+}
+
+.menu-group{
+    width:100%;
+}
+
+.submenu{
+    display:none;
+
+    padding-left:25px;
+}
+
+.submenu.show{
+    display:block;
+}
+
+.submenu a{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px 8px;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:16px;
+}
+
+.submenu a:hover{
+    background:#eef6fc;
+}
+
+.submenu a i{
+    width:25px;
+
+    color:#315a9c;
+}
+
+
+/* =====================================================
+   PROFILE SIDE PANEL
+===================================================== */
+
+.profile-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+}
+
+.profile-overlay.show{
+    display:block;
+}
+
+.profile-panel{
+    position:fixed;
+
+    top:0;
+
+    right:-400px;
+
+    width:390px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:-4px 0 15px rgba(0,0,0,.20);
+
+    transition:right .3s ease;
+
+    overflow-y:auto;
+
+    padding:80px 28px 30px;
+}
+
+.profile-panel.open{
+    right:0;
+}
+
+.profile-close{
+    position:absolute;
+
+    top:18px;
+    right:25px;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    color:#999;
+
+    cursor:pointer;
+}
+
+.profile-panel-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:40px;
+}
+
+.profile-panel-avatar{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+}
+
+.profile-panel-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-panel-name{
+    color:#59616b;
+
+    font-size:21px;
+
+    line-height:1.2;
+}
+
+.profile-panel-name span{
+    display:block;
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#777;
+}
+
+.profile-notice{
+    display:flex;
+
+    gap:8px;
+
+    background:#c7f0fb;
+
+    padding:14px 12px;
+
+    margin-bottom:25px;
+
+    color:#687887;
+
+    font-size:15px;
+
+    line-height:1.55;
+}
+
+.profile-notice i{
+    font-size:13px;
+}
+
+.profile-links{
+    display:flex;
+
+    flex-direction:column;
+}
+
+.profile-links a{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:14px 0;
+
+    text-decoration:none;
+
+    color:#687887;
+
+    font-size:17px;
+}
+
+.profile-links a i{
+    width:20px;
+
+    color:#38659b;
+
+    font-size:19px;
+}
+
+.profile-links a:hover{
+    color:#315a9c;
+}
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification-wrapper{
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+}
+
+.notification-icon{
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.notification-panel{
+    position:absolute;
+
+    top:50px;
+    right:0;
+
+    width:460px;
+
+    max-width:calc(100vw - 30px);
+
+    background:#fff;
+
+    border-radius:6px;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.20);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:10002;
+}
+
+.notification-panel:not(.show){
+    display:none !important;
+}
+
+.notification-panel.show{
+    display:block !important;
+}
+
+.notification-title{
+    font-size:30px;
+
+    font-weight:400;
+
+    color:#444;
+
+    padding:28px;
+
+    border-bottom:1px solid #eee;
+}
+
+.notification-body{
+    padding:28px;
+}
+
+.notification-message{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    background:#c9f1fb;
+
+    border-radius:5px;
+
+    padding:25px;
+
+    color:#607080;
+
+    font-size:18px;
+
+    line-height:1.55;
+}
+
+.notification-message i{
+    margin-top:4px;
+
+    font-size:18px;
+}
+
+.view-notifications{
+    width:100%;
+
+    margin-top:28px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:4px;
+
+    background:#315da8;
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    /* HEADER */
+
+    .dashboard-header{
+        height:38px;
+
+        padding:0 10px;
+    }
+
+    .menu-icon{
+        font-size:20px;
+    }
+
+    .dashboard-actions{
+        gap:12px;
+
+        font-size:17px;
+    }
+
+    .profile-icon{
+        width:28px;
+        height:28px;
+    }
+
+
+    /* MEMBER INFO */
+
+    .member-info{
+        padding:7px 8px 8px;
+    }
+
+    .member-name{
+        font-size:9px;
+    }
+
+    .member-number{
+        font-size:9px;
+
+        margin-top:2px;
+    }
+
+    .member-date{
+        font-size:9px;
+
+        margin-top:3px;
+    }
+
+
+    /* MAIN */
+
+    .main-content{
+        padding:115px 8px 50px;
+    }
+
+    .member-title{
+        display:none;
+    }
+
+
+    /* PROFILE */
+
+    .member-details{
+        border-radius:4px;
+
+        margin-bottom:12px;
+    }
+
+    .cover{
+        height:80px;
+    }
+
+    .profile-content{
+        gap:10px;
+
+        padding:0 10px 10px;
+    }
+
+    .avatar{
+        width:58px;
+        height:58px;
+
+        border-width:4px;
+
+        margin-top:-30px;
+    }
+
+    .profile-text{
+        padding-top:8px;
+    }
+
+    .profile-text h2{
+        font-size:15px;
+
+        margin-bottom:7px;
+    }
+
+    .profile-info{
+        display:block;
+
+        font-size:9px;
+
+        line-height:1.8;
+    }
+
+    .profile-info span{
+        display:inline-flex;
+
+        margin-right:5px;
+    }
+
+
+    /* TABS */
+
+    .member-tabs{
+        margin:8px 0 12px;
+
+        gap:5px;
+    }
+
+    .member-tab{
+        font-size:10px;
+
+        padding:7px 10px;
+    }
+
+
+    /* DETAILS */
+
+    .details-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .detail-section-title{
+        font-size:12px;
+
+        margin-bottom:15px;
+
+        margin-top:25px;
+    }
+
+    .detail-table{
+        font-size:10px;
+    }
+
+    .detail-table td{
+        padding:8px 5px;
+
+        line-height:1.45;
+    }
+
+    .detail-table td:first-child{
+        width:45%;
+    }
+
+    .detail-table td:last-child{
+        width:55%;
+    }
+
+
+    /* ADDRESS */
+
+    .address-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .address-header{
+        align-items:flex-start;
+    }
+
+    .address-title{
+        font-size:12px;
+    }
+
+    .update-button{
+        font-size:8px;
+
+        padding:7px 8px;
+    }
+
+    .contact-title{
+        font-size:12px;
+    }
+
+
+    /* COVERAGE */
+
+    .coverage-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .coverage-title{
+        font-size:12px;
+    }
+
+    .coverage-timeline{
+        padding-left:25px;
+    }
+
+    .coverage-timeline::before{
+        left:6px;
+    }
+
+    .coverage-dot{
+        left:-25px;
+
+        width:13px;
+        height:13px;
+    }
+
+    .coverage-company{
+        font-size:10px;
+    }
+
+    .coverage-er{
+        font-size:9px;
+    }
+
+    .coverage-date{
+        font-size:9px;
+    }
+
+
+    /* CALENDAR */
+
+    .calendar{
+        top:290px;
+
+        padding:12px;
+
+        font-size:22px;
+
+        border-radius:10px 0 0 10px;
+    }
+
+
+    /* SIDE MENU */
+
+    .side-menu{
+        width:320px;
+    }
+
+    .side-menu-header{
+        height:60px;
+
+        padding:0 20px;
+    }
+
+    .side-menu-header span{
+        font-size:21px;
+    }
+
+    .menu-items{
+        padding:10px 18px 25px;
+    }
+
+    .menu-item{
+        min-height:50px;
+
+        font-size:16px;
+    }
+
+    .submenu a{
+        font-size:15px;
+
+        padding:11px 5px;
+    }
+
+
+    /* PROFILE */
+
+    .profile-panel{
+        width:90%;
+
+        max-width:360px;
+
+        padding:65px 20px 25px;
+    }
+
+    .profile-panel-name{
+        font-size:16px;
+    }
+
+    .profile-panel-name span{
+        font-size:12px;
+
+        margin-top:10px;
+    }
+
+    .profile-notice{
+        font-size:11px;
+
+        padding:12px;
+    }
+
+    .profile-links a{
+        font-size:13px;
+    }
+
+
+    /* NOTIFICATION */
+
+    .notification-panel{
+        position:fixed;
+
+        top:48px;
+
+        right:10px;
+        left:auto;
+
+        width:calc(100vw - 20px);
+
+        max-width:420px;
+
+        border-radius:6px;
+    }
+
+    .notification-title{
+        font-size:20px;
+
+        padding:18px;
+    }
+
+    .notification-body{
+        padding:18px;
+    }
+
+    .notification-message{
+        padding:16px;
+
+        font-size:13px;
+
+        line-height:1.5;
+    }
+
+    .view-notifications{
+        margin-top:18px;
+
+        padding:13px;
+
+        font-size:12px;
+    }
+
+
+    /* APPOINTMENT */
+
+    .appointment-overlay{
+        padding:15px;
+    }
+
+    .appointment-box{
+        max-width:100%;
+
+        padding:22px 18px;
+
+        border-radius:7px;
+    }
+
+    .appointment-box h2{
+        font-size:17px;
+    }
+
+    .appointment-box h3{
+        font-size:13px;
+    }
+
+    .appointment-box p{
+        font-size:10px;
+    }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea{
+        font-size:11px;
+
+        padding:10px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media(max-width:380px){
+
+    .profile-text h2{
+        font-size:13px;
+    }
+
+    .profile-info{
+        font-size:8px;
+    }
+
+    .detail-table{
+        font-size:9px;
+    }
+
+    .detail-table td{
+        padding:7px 4px;
+    }
+
+    .coverage-company{
+        font-size:9px;
+    }
+
+    .coverage-date{
+        font-size:8px;
+    }
+
+}
+
+      /* =========================================
+   COVERAGE HISTORY
+   ========================================= */
+
+.coverage-history {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 25px 40px 35px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+
+.coverage-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #eef1f4;
+    color: #526987;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.coverage-title i {
+    font-size: 23px;
+}
+
+
+/* LATEST */
+
+.coverage-latest {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 35px 0 45px;
+}
+
+.coverage-latest span {
+    background: #d8edf7;
+    color: #526987;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.coverage-latest div {
+    flex: 1;
+    border-top: 2px dashed #dddddd;
+}
+
+
+/* EACH ENTRY */
+
+.coverage-entry {
+    position: relative;
+    margin-left: 45px;
+    padding-left: 55px;
+    padding-bottom: 45px;
+}
+
+
+/* VERTICAL LINE */
+
+.coverage-entry:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 25px;
+    height: calc(100% - 5px);
+    width: 2px;
+    background: #e0e0e0;
+}
+
+
+/* DOT */
+
+.timeline-dot {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+/* BLUE */
+
+.coverage-entry.blue .timeline-dot {
+    background: #18a9d2;
+    border: 5px solid #d9f7fc;
+}
+
+
+/* PURPLE */
+
+.coverage-entry.purple .timeline-dot {
+    background: #4b49c7;
+    border: 5px solid #e8e7ff;
+}
+
+
+/* ORANGE */
+
+.coverage-entry.orange .timeline-dot {
+    background: #efa313;
+    border: 5px solid #fff0d5;
+}
+
+
+/* DATES */
+
+.coverage-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.coverage-dates span {
+    display: block;
+    color: #444;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.coverage-dates strong {
+    display: block;
+    color: #555;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+/* MEMBER / COMPANY */
+
+.coverage-member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* INITIAL CIRCLE */
+
+.coverage-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 21px;
+}
+
+
+/* BLUE VM */
+
+.coverage-entry.blue .coverage-avatar {
+    background: #d9f7fc;
+    color: #29a8c5;
+}
+
+
+/* PURPLE P */
+
+.coverage-entry.purple .coverage-avatar {
+    background: #e8e7ff;
+    color: #5957c8;
+}
+
+
+/* ORANGE SE */
+
+.coverage-entry.orange .coverage-avatar {
+    background: #fff0d5;
+    color: #e5a11c;
+}
+
+
+/* COMPANY */
+
+.coverage-company {
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* NUMBER */
+
+.coverage-number {
+    color: #555;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+/* END CHECK */
+
+.coverage-end {
+    margin-left: 37px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #dce1e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dce1e5;
+    font-size: 17px;
+}
+/* =====================================================
+   MEMBER INFORMATION - SAME FONT SCALE AS CONTRIBUTIONS
+===================================================== */
+
+@media(max-width:700px){
+
+    /* PROFILE */
+    .profile-text h2{
+        font-size:15px;
+        font-weight:400;
+    }
+
+    .profile-info{
+        font-size:9px;
+        line-height:1.8;
+    }
+
+    .profile-info span{
+        font-size:9px;
+    }
+
+
+    /* TABS */
+    .member-tab{
+        font-size:10px;
+        padding:7px 10px;
+    }
+
+
+    /* DETAILS SECTION */
+    .detail-section-title{
+        font-size:12px;
+    }
+
+
+    .detail-table{
+        font-size:10px;
+    }
+
+    .detail-table td{
+        font-size:10px;
+        padding:8px 5px;
+        line-height:1.45;
+    }
+
+    .detail-table td:first-child{
+        font-size:9px;
+        width:45%;
+    }
+
+    .detail-table td:last-child{
+        font-size:10px;
+        width:55%;
+    }
+
+
+    /* ADDRESS */
+    .address-title{
+        font-size:12px;
+    }
+
+    .address-section .detail-table td{
+        font-size:10px;
+    }
+
+
+    /* CONTACT */
+    .contact-title{
+        font-size:12px;
+    }
+
+
+    /* UPDATE BUTTON */
+    .update-button{
+        font-size:8px;
+        padding:7px 8px;
+    }
+
+
+    /* COVERAGE */
+    .coverage-title{
+        font-size:12px;
+    }
+
+    .coverage-latest span{
+        font-size:10px;
+    }
+
+    .coverage-dates span{
+        font-size:9px;
+    }
+
+    .coverage-dates strong{
+        font-size:10px;
+    }
+
+    .coverage-company{
+        font-size:10px;
+    }
+
+    .coverage-number{
+        font-size:9px;
+    }
+
+    .coverage-avatar{
+        font-size:15px;
+    }
+
+}
+
+      /* =========================================
+   INCREASE ALL FONTS BY 3px
+   EXCEPT COVERAGE HISTORY
+========================================= */
+
+@media (min-width: 701px) {
+
+    .dashboard-actions {
+        font-size: 28px;
+    }
+
+    .member-name {
+        font-size: 22px;
+    }
+
+    .member-number {
+        font-size: 19px;
+    }
+
+    .member-date {
+        font-size: 18px;
+    }
+
+    .member-title {
+        font-size: 17px;
+    }
+
+    .profile-text h2 {
+        font-size: 23px;
+    }
+
+    .profile-info,
+    .profile-info span {
+        font-size: 15px;
+    }
+
+    .member-tab {
+        font-size: 16px;
+    }
+
+    .detail-section-title,
+    .address-title,
+    .contact-title {
+        font-size: 17px;
+    }
+
+    .detail-table,
+    .detail-table td,
+    .detail-table td:first-child,
+    .detail-table td:last-child {
+        font-size: 15px;
+    }
+
+    .update-button {
+        font-size: 13px;
+    }
+
+    .appointment-box h2 {
+        font-size: 23px;
+    }
+
+    .appointment-box h3 {
+        font-size: 18px;
+    }
+
+    .appointment-box p {
+        font-size: 15px;
+    }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea {
+        font-size: 15px;
+    }
+
+    .next-btn {
+        font-size: 16px;
+    }
+
+    .menu-item {
+        font-size: 21px;
+    }
+
+    .submenu a {
+        font-size: 19px;
+    }
+
+    .profile-panel-name {
+        font-size: 24px;
+    }
+
+    .profile-panel-name span {
+        font-size: 18px;
+    }
+
+    .profile-notice {
+        font-size: 18px;
+    }
+
+    .profile-links a {
+        font-size: 20px;
+    }
+
+    .notification-title {
+        font-size: 33px;
+    }
+
+    .notification-message {
+        font-size: 21px;
+    }
+
+    .view-notifications {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================
+   MOBILE FONTS +3px
+   COVERAGE HISTORY EXCLUDED
+========================================= */
+
+@media (max-width: 700px) {
+
+    .member-name {
+        font-size: 12px;
+    }
+
+    .member-number {
+        font-size: 12px;
+    }
+
+    .member-date {
+        font-size: 12px;
+    }
+
+    .profile-text h2 {
+        font-size: 18px;
+    }
+
+    .profile-info,
+    .profile-info span {
+        font-size: 12px;
+    }
+
+    .member-tab {
+        font-size: 13px;
+    }
+
+    .detail-section-title,
+    .address-title,
+    .contact-title {
+        font-size: 15px;
+    }
+
+    .detail-table,
+    .detail-table td {
+        font-size: 13px;
+    }
+
+    .detail-table td:first-child {
+        font-size: 12px;
+    }
+
+    .detail-table td:last-child {
+        font-size: 13px;
+    }
+
+    .update-button {
+        font-size: 11px;
+    }
+
+    .appointment-box h2 {
+        font-size: 20px;
+    }
+
+    .appointment-box h3 {
+        font-size: 16px;
+    }
+
+    .appointment-box p {
+        font-size: 13px;
+    }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea {
+        font-size: 14px;
+    }
+
+    .next-btn {
+        font-size: 16px;
+    }
+
+    .menu-item {
+        font-size: 19px;
+    }
+
+    .submenu a {
+        font-size: 18px;
+    }
+
+    .profile-panel-name {
+        font-size: 19px;
+    }
+
+    .profile-panel-name span {
+        font-size: 15px;
+    }
+
+    .profile-notice {
+        font-size: 14px;
+    }
+
+    .profile-links a {
+        font-size: 16px;
+    }
+
+    .notification-title {
+        font-size: 23px;
+    }
+
+    .notification-message {
+        font-size: 16px;
+    }
+
+    .view-notifications {
+        font-size: 15px;
+    }
+
+}
+
+      /* ADDITIONAL +2px FONT SIZE
+   EXCEPT COVERAGE HISTORY
+*/
+
+@media (min-width: 701px) {
+    .dashboard-actions { font-size: 30px; }
+    .member-name { font-size: 24px; }
+    .member-number { font-size: 21px; }
+    .member-date { font-size: 20px; }
+    .member-title { font-size: 19px; }
+    .profile-text h2 { font-size: 25px; }
+    .profile-info,
+    .profile-info span { font-size: 17px; }
+    .member-tab { font-size: 18px; }
+
+    .detail-section-title,
+    .address-title,
+    .contact-title { font-size: 19px; }
+
+    .detail-table,
+    .detail-table td,
+    .detail-table td:first-child,
+    .detail-table td:last-child { font-size: 17px; }
+
+    .update-button { font-size: 15px; }
+    .appointment-box h2 { font-size: 25px; }
+    .appointment-box h3 { font-size: 20px; }
+    .appointment-box p { font-size: 17px; }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea { font-size: 17px; }
+
+    .next-btn { font-size: 18px; }
+    .menu-item { font-size: 23px; }
+    .submenu a { font-size: 21px; }
+    .profile-panel-name { font-size: 26px; }
+    .profile-panel-name span { font-size: 20px; }
+    .profile-notice { font-size: 20px; }
+    .profile-links a { font-size: 22px; }
+    .notification-title { font-size: 35px; }
+    .notification-message { font-size: 23px; }
+    .view-notifications { font-size: 21px; }
+}
+
+@media (max-width: 700px) {
+    .member-name { font-size: 14px; }
+    .member-number { font-size: 14px; }
+    .member-date { font-size: 14px; }
+    .profile-text h2 { font-size: 20px; }
+
+    .profile-info,
+    .profile-info span { font-size: 14px; }
+
+    .member-tab { font-size: 15px; }
+
+    .detail-section-title,
+    .address-title,
+    .contact-title { font-size: 17px; }
+
+    .detail-table,
+    .detail-table td { font-size: 15px; }
+
+    .detail-table td:first-child { font-size: 14px; }
+    .detail-table td:last-child { font-size: 15px; }
+    .update-button { font-size: 13px; }
+    .appointment-box h2 { font-size: 22px; }
+    .appointment-box h3 { font-size: 18px; }
+    .appointment-box p { font-size: 15px; }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea { font-size: 16px; }
+
+    .next-btn { font-size: 18px; }
+    .menu-item { font-size: 21px; }
+    .submenu a { font-size: 20px; }
+    .profile-panel-name { font-size: 21px; }
+    .profile-panel-name span { font-size: 17px; }
+    .profile-notice { font-size: 16px; }
+    .profile-links a { font-size: 18px; }
+    .notification-title { font-size: 25px; }
+    .notification-message { font-size: 18px; }
+    .view-notifications { font-size: 17px; }
+}
+
+/* =========================================
+   MATCH PROFILE AND DETAILS CONTAINER WIDTH
+========================================= */
+
+.member-details,
+.details-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+      @media (max-width: 700px) {
+    .member-details,
+    .details-section {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+      /* ALIGN PROFILE NAME BESIDE AVATAR */
+.profile-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    text-align: left !important;
+}
+
+.profile-content .avatar {
+    flex-shrink: 0 !important;
+    margin-top: -30px;
+}
+
+.profile-content .profile-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding-top: 8px !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+.profile-content .profile-text h2 {
+    text-align: left !important;
+    margin: 0 0 7px !important;
+}
+
+.profile-content .profile-info {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+.profile-content .profile-info span {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+@media (max-width: 700px) {
+    .profile-content {
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .profile-content .avatar {
+        margin-top: -30px;
+    }
+
+    .profile-content .profile-text {
+        padding-top: 8px !important;
+    }
+}
+/* SSS Status: ACTIVE */
+.status,
+.status-active,
+.sss-status {
+    color: #5f5f5f !important;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FIXED HEADER
+===================================================== -->
+
+<header class="sticky-header">
+
+    <div class="dashboard-header">
+
+        <button
+        class="menu-icon"
+        id="menuButton"
+        type="button">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="dashboard-actions">
+
+            <div class="notification-wrapper">
+
+                <i
+                class="fa-solid fa-bell notification-icon"
+                id="notificationButton">
+                </i>
+
+
+                <div
+                class="notification-panel"
+                id="notificationPanel">
+
+                    <div class="notification-title">
+                        Notification
+                    </div>
+
+
+                    <div class="notification-body">
+
+                        <div class="notification-message">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                You currently have no notifications.<br>
+                                Your 10 most recent notifications<br>
+                                will be displayed here.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                        class="view-notifications"
+                        type="button">
+
+                            VIEW ALL NOTIFICATIONS
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+            class="profile-icon"
+            id="profileButton"
+            type="button">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="member-info">
+
+        <div class="member-name">
+
+            SANTIAGO, MARK LESTER NARAG
+
+        </div>
+
+
+        <div class="member-number">
+
+            01-3599294-4
+
+        </div>
+
+
+        <div class="member-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="currentDate">
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PROFILE SIDE PANEL
+===================================================== -->
+
+<div
+class="profile-overlay"
+id="profileOverlay">
+</div>
+
+
+<div
+class="profile-panel"
+id="profilePanel">
+
+
+    <button
+    class="profile-close"
+    id="profileClose"
+    type="button">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="profile-panel-header">
+
+        <div class="profile-panel-avatar">
+
+            <img
+            src="Lprof.jpeg"
+            alt="Profile">
+
+        </div>
+
+
+        <div class="profile-panel-name">
+
+            <div>
+                SANTIAGO, MARK
+            </div>
+
+            <div>
+                LESTER NARAG
+            </div>
+
+            <span>
+                01-3599294-4
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-notice">
+
+        <div>
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+
+            Your password will expire on
+            Feb 14, 2027
+
+            <br>
+
+            Your last login was on Oct 11, 2026
+            09:24:43 PM through the SSS Website
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                My Details
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <span>
+                Change Password
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-user-lock"></i>
+
+            <span>
+                Setup Time-based One-Time Password
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>
+                Contact Us
+            </span>
+
+        </a>
+
+
+        <a
+        href="index.html"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Sign Out
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
+
+<div
+class="calendar"
+id="calendarButton">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+
+<!-- =====================================================
+     APPOINTMENT
+===================================================== -->
+
+<div
+class="appointment-overlay"
+id="appointmentModal">
+
+
+    <div class="appointment-box">
+
+
+        <button
+        class="close-appointment"
+        id="closeAppointment"
+        type="button">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <h2>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Set Appointment
+
+        </h2>
+
+
+        <hr>
+
+
+        <h3>
+
+            Say goodbye to waiting in line!
+
+        </h3>
+
+
+        <p>
+
+            Experience ultimate convenience by setting your appointments online with just a few clicks.
+
+        </p>
+
+
+        <select id="appointmentPurpose">
+
+            <option value="">
+                Select Purpose
+            </option>
+
+            <option>
+                Member Data Update
+            </option>
+
+            <option>
+                Benefit Inquiry
+            </option>
+
+            <option>
+                Loan Inquiry
+            </option>
+
+            <option>
+                Other
+            </option>
+
+        </select>
+
+
+        <select id="appointmentRegion">
+
+            <option value="">
+                Select Region
+            </option>
+
+            <option>
+                Region II
+            </option>
+
+            <option>
+                NCR
+            </option>
+
+            <option>
+                Other Region
+            </option>
+
+        </select>
+
+
+        <select id="appointmentBranch">
+
+            <option value="">
+                Select Branch
+            </option>
+
+            <option>
+                Tuguegarao Branch
+            </option>
+
+            <option>
+                Other SSS Branch
+            </option>
+
+        </select>
+
+
+        <input
+        type="date"
+        id="appointmentDate">
+
+
+        <select id="appointmentTime">
+
+            <option value="">
+                Select Time
+            </option>
+
+            <option>
+                08:00 AM
+            </option>
+
+            <option>
+                09:00 AM
+            </option>
+
+            <option>
+                10:00 AM
+            </option>
+
+            <option>
+                11:00 AM
+            </option>
+
+            <option>
+                01:00 PM
+            </option>
+
+            <option>
+                02:00 PM
+            </option>
+
+            <option>
+                03:00 PM
+            </option>
+
+        </select>
+
+
+        <textarea
+        id="appointmentConcern"
+        placeholder="Concern(s)">
+        </textarea>
+
+
+        <button
+        class="next-btn"
+        id="appointmentNext"
+        type="button">
+
+            Next
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main-content">
+
+
+
+    <!-- =================================================
+         PROFILE CARD
+    ================================================== -->
+
+    <div class="member-details">
+
+
+        <div class="cover"></div>
+
+
+        <div class="profile-content">
+
+
+            <div class="avatar">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </div>
+
+
+            <div class="profile-text">
+
+
+                <h2>
+
+                    SANTIAGO, MARK LESTER NARAG
+
+                </h2>
+
+
+                <div class="profile-info">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        SS Number 01-3599294-4
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Your password will expire on Feb 14, 2027
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                        Your last login was on Oct 11, 2026 09:24:43 PM through the SSS Website
+
+                    </span>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TABS
+    ================================================== -->
+
+    <div class="member-tabs">
+
+
+        <button
+        class="member-tab active"
+        type="button">
+
+            <i class="fa-solid fa-user"></i>
+
+            Member Details
+
+        </button>
+
+
+        <button
+        class="member-tab"
+        type="button"
+        onclick="location.href='contributions.html'">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            My Contributions
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         MEMBER DETAILS
+    ================================================== -->
+
+    <section class="details-section">
+
+
+        <!-- MY DETAILS -->
+
+        <div class="detail-section-title">
+
+            <i class="fa-solid fa-user"></i>
+
+            My Details
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+                <td>SS Number Status</td>
+                <td class="status-active">ACTIVE</td>
+            </tr>
+
+            <tr>
+                <td>Document Compliance</td>
+                <td>
+                    APPLICATION THRU SSS WEB/MOBILE APP
+                </td>
+            </tr>
+
+            <tr>
+                <td>Membership Status</td>
+                <td>PERMANENT</td>
+            </tr>
+
+            <tr>
+                <td>Prior Registrant</td>
+                <td>NO</td>
+            </tr>
+
+            <tr>
+                <td>Date of SS Number Issuance</td>
+                <td>FEB 11, 2017</td>
+            </tr>
+
+            <tr>
+                <td>Sex</td>
+                <td>MALE</td>
+            </tr>
+
+        </table>
+
+
+        <!-- EMPLOYMENT -->
+
+        <div class="detail-section-title">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            Employment Details
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+                <td>Reporting Date</td>
+                <td>MAR 06, 2017</td>
+            </tr>
+
+            <tr>
+                <td>Reporting ID</td>
+                <td>03-9249624-1</td>
+            </tr>
+
+            <tr>
+                <td>Latest ER ID</td>
+                <td>80-0159722-6</td>
+            </tr>
+
+            <tr>
+                <td>Latest ER Name</td>
+                <td>
+                    LITTELFUSE PHILIPPINES INC.
+                </td>
+            </tr>
+
+        </table>
+
+
+        <!-- OTHER DETAILS -->
+
+        <div class="detail-section-title">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            Other Details
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+                <td>Claim Flag Status</td>
+                <td>
+                    NO FINAL/FUNERAL CLAIM
+                </td>
+            </tr>
+
+            <tr>
+                <td>Transferred to (New SS Number)</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Membership Type</td>
+                <td>EMPLOYEE</td>
+            </tr>
+
+            <tr>
+                <td>Change in Coverage Status</td>
+                <td>NO STATUS CHANGE</td>
+            </tr>
+
+            <tr>
+                <td>Date of Loan Disqualification</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>SS Number Withdrawal Reason</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Record Location</td>
+                <td>TUGUEGARAO</td>
+            </tr>
+
+        </table>
+
+
+        <!-- UMID -->
+
+        <div class="detail-section-title">
+
+            <i class="fa-solid fa-id-card"></i>
+
+            UMID/SSS ID Details
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+                <td>Capture Site</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Capture Date/Enrollment Date</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Card Serial/Transaction Number</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Card Type</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Transaction Status</td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- =================================================
+         ADDRESS
+    ================================================== -->
+
+    <section class="address-section">
+
+
+        <div class="address-header">
+
+            <div class="address-title">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Address
+
+            </div>
+
+
+            <button
+            class="update-button"
+            type="button">
+
+                Update Information
+
+            </button>
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+
+                <td>
+                    Local Home Address
+                </td>
+
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Local Mailing Address
+                </td>
+
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Home Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Mailing Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- CONTACT -->
+
+        <div class="contact-title">
+
+            <i class="fa-solid fa-address-book"></i>
+
+            Contact Information
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+
+                <td>
+                    Landline
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Mobile
+                </td>
+
+                <td>
+                    0935-0621315
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Email Address
+                </td>
+
+                <td>
+                    lestantiago22@gmail.com
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+
+    <!-- END OF TIMELINE -->
+    <div class="coverage-end">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+</div>
+    </section>
+<!-- =================================================
+     COVERAGE HISTORY
+================================================== -->
+
+<section class="coverage-history">
+
+    <!-- TITLE -->
+
+    <div class="coverage-title">
+
+        <i class="fa-regular fa-clock"></i>
+
+        <span>
+            Coverage History
+        </span>
+
+    </div>
+
+
+    <!-- LATEST -->
+
+    <div class="coverage-latest">
+
+        <span>
+            LATEST
+        </span>
+
+        <div></div>
+
+    </div>
+
+
+    <!-- =================================================
+         1. LITTELFUSE - LATEST
+    ================================================== -->
+
+    <div class="coverage-entry blue">
+
+        <div class="timeline-dot"></div>
+
+
+        <div class="coverage-dates">
+
+            <div>
+
+                <span>
+                    EFFECTIVITY DATE
+                </span>
+
+                <strong>
+                    Jan 01, 2026
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REPORTING DATE
+                </span>
+
+                <strong>
+                    Sep 01, 2026
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="coverage-member">
+
+            <div class="coverage-avatar">
+                L
+            </div>
+
+
+            <div>
+
+                <div class="coverage-company">
+                    LITTELFUSE PHILIPPINES INC
+                </div>
+
+                <div class="coverage-number">
+                    80-0159722-6
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         2. LITTELFUSE
+    ================================================== -->
+
+    <div class="coverage-entry blue">
+
+        <div class="timeline-dot"></div>
+
+
+        <div class="coverage-dates">
+
+            <div>
+
+                <span>
+                    EFFECTIVITY DATE
+                </span>
+
+                <strong>
+                    Feb 01, 2022
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REPORTING DATE
+                </span>
+
+                <strong>
+                    May 01, 2025
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="coverage-member">
+
+            <div class="coverage-avatar">
+                L
+            </div>
+
+
+            <div>
+
+                <div class="coverage-company">
+                    LITTELFUSE PHILIPPINES INC
+                </div>
+
+                <div class="coverage-number">
+                    80-0159722-6
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         3. K&K MOLDING
+    ================================================== -->
+
+    <div class="coverage-entry orange">
+
+        <div class="timeline-dot"></div>
+
+
+        <div class="coverage-dates">
+
+            <div>
+
+                <span>
+                    EFFECTIVITY DATE
+                </span>
+
+                <strong>
+                    Dec 01, 2019
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REPORTING DATE
+                </span>
+
+                <strong>
+                    Apr 01, 2021
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="coverage-member">
+
+            <div class="coverage-avatar">
+                K
+            </div>
+
+
+            <div>
+
+                <div class="coverage-company">
+                    K&K MOLDING INC
+                </div>
+
+                <div class="coverage-number">
+                    06-8529635-2
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         4. K&K MOLDING
+    ================================================== -->
+
+    <div class="coverage-entry orange">
+
+        <div class="timeline-dot"></div>
+
+
+        <div class="coverage-dates">
+
+            <div>
+
+                <span>
+                    EFFECTIVITY DATE
+                </span>
+
+                <strong>
+                    Feb 11, 2017
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REPORTING DATE
+                </span>
+
+                <strong>
+                    Mar 06, 2017
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="coverage-member">
+
+            <div class="coverage-avatar">
+                K
+            </div>
+
+
+            <div>
+
+                <div class="coverage-company">
+                    K&K MOLDING INC
+                </div>
+
+                <div class="coverage-number">
+                    06-8529635-2
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- END -->
+
+    <div class="coverage-end">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     SIDE MENU OVERLAY
+===================================================== -->
+
+<div
+class="menu-overlay"
+id="menuOverlay">
+</div>
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<div
+class="side-menu"
+id="sideMenu">
+
+
+    <div class="side-menu-header">
+
+        <span>
+            Menu
+        </span>
+
+
+        <button
+        class="close-menu"
+        id="closeMenu"
+        type="button">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="menu-items">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+        href="dashboard.html"
+        class="menu-item">
+
+            <i class="fa-solid fa-border-all"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <!-- MEMBER INFORMATION -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="memberSubmenu">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <span>
+                    Member Information
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="memberSubmenu">
+
+
+                <a href="memberinfo.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Member Details
+                    </span>
+
+                </a>
+
+
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>
+                        My Contributions
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <span>
+                        Update Security Questions
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="serviceSubmenu">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="serviceSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>
+                        Disbursement Account
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Benefit Re-disbursement
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                    <span>
+                        Auto Debit Arrangement
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-roof"></i>
+
+                    <span>
+                        Pension Booster
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <span>
+                        RTC/CPO Reference Number Inquiry
+                    </span>
+
+                </a>
+
+
+                <a
+                href="#"
+                onclick="openAppointment(); return false;">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>
+                        Set Appointment
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <span>
+                        MySSS Card
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOANS -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="loanSubmenu">
+
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                <span>
+                    Loans
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="loanSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Salary Loan
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                    <span>
+                        Calamity/Emergency Loan
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>
+                        Pension Loan
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Loan Penalty Condonation
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="benefitsSubmenu">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <span>
+                    Benefits
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="benefitsSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-pregnant"></i>
+
+                    <span>
+                        Maternity Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>
+                        Unemployment Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-bed-pulse"></i>
+
+                    <span>
+                        Sickness Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-wheelchair"></i>
+
+                    <span>
+                        Disability Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>
+                        Retirement Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>
+                        Funeral Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-monument"></i>
+
+                    <span>
+                        Death Claim
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRN -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="prnSubmenu">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <span>
+                    Payment Reference Number
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="prnSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Contributions
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Loans
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIGN OUT -->
+
+        <a
+        href="index.html"
+        class="menu-item"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Sign Out
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   REAL TIME DATE
+===================================================== */
+
+function updateDateTime(){
+
+    const now = new Date();
+
+    const options = {
+
+        weekday:"long",
+
+        year:"numeric",
+
+        month:"long",
+
+        day:"numeric",
+
+        hour:"numeric",
+
+        minute:"2-digit",
+
+        second:"2-digit",
+
+        hour12:true
+
+    };
+
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        now.toLocaleString(
+            "en-US",
+            options
+        );
+
+}
+
+updateDateTime();
+
+setInterval(
+    updateDateTime,
+    1000
+);
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+const menuButton =
+    document.getElementById(
+        "menuButton"
+    );
+
+const sideMenu =
+    document.getElementById(
+        "sideMenu"
+    );
+
+const menuOverlay =
+    document.getElementById(
+        "menuOverlay"
+    );
+
+const closeMenu =
+    document.getElementById(
+        "closeMenu"
+    );
+
+
+function openMenu(){
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("open");
+
+}
+
+
+function closeSideMenu(){
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("open");
+
+}
+
+
+menuButton.onclick =
+    openMenu;
+
+
+closeMenu.onclick =
+    closeSideMenu;
+
+
+menuOverlay.onclick =
+    closeSideMenu;
+
+
+/* =====================================================
+   SUBMENUS
+===================================================== */
+
+const menuToggles =
+    document.querySelectorAll(
+        ".menu-toggle"
+    );
+
+
+menuToggles.forEach(toggle => {
+
+    toggle.addEventListener(
+        "click",
+        function(){
+
+            const targetId =
+                this.dataset.target;
+
+            const target =
+                document.getElementById(
+                    targetId
+                );
+
+
+            menuToggles.forEach(other => {
+
+                if(other !== this){
+
+                    const otherId =
+                        other.dataset.target;
+
+                    const otherMenu =
+                        document.getElementById(
+                            otherId
+                        );
+
+                    otherMenu.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            });
+
+
+            target.classList.toggle(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   PROFILE PANEL
+===================================================== */
+
+const profileIcon =
+    document.getElementById(
+        "profileButton"
+    );
+
+const profilePanel =
+    document.getElementById(
+        "profilePanel"
+    );
+
+const profileOverlay =
+    document.getElementById(
+        "profileOverlay"
+    );
+
+const profileClose =
+    document.getElementById(
+        "profileClose"
+    );
+
+
+function openProfile(){
+
+    profilePanel.classList.add(
+        "open"
+    );
+
+    profileOverlay.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeProfile(){
+
+    profilePanel.classList.remove(
+        "open"
+    );
+
+    profileOverlay.classList.remove(
+        "show"
+    );
+
+}
+
+
+profileIcon.addEventListener(
+    "click",
+    function(){
+
+        notificationPanel.classList.remove(
+            "show"
+        );
+
+        openProfile();
+
+    }
+);
+
+
+profileClose.addEventListener(
+    "click",
+    closeProfile
+);
+
+
+profileOverlay.addEventListener(
+    "click",
+    closeProfile
+);
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+const notificationButton =
+    document.getElementById(
+        "notificationButton"
+    );
+
+const notificationPanel =
+    document.getElementById(
+        "notificationPanel"
+    );
+
+
+notificationButton.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+        profilePanel.classList.remove(
+            "open"
+        );
+
+        profileOverlay.classList.remove(
+            "show"
+        );
+
+        notificationPanel.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+notificationPanel.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+    }
+);
+
+
+document.addEventListener(
+    "click",
+    function(){
+
+        notificationPanel.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   APPOINTMENT
+===================================================== */
+
+const calendarButton =
+    document.getElementById(
+        "calendarButton"
+    );
+
+const appointmentModal =
+    document.getElementById(
+        "appointmentModal"
+    );
+
+const closeAppointmentButton =
+    document.getElementById(
+        "closeAppointment"
+    );
+
+
+function openAppointment(){
+
+    appointmentModal.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeAppointment(){
+
+    appointmentModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+calendarButton.addEventListener(
+    "click",
+    openAppointment
+);
+
+
+closeAppointmentButton.addEventListener(
+    "click",
+    closeAppointment
+);
+
+
+appointmentModal.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target === appointmentModal
+        ){
+
+            closeAppointment();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   APPOINTMENT NEXT
+===================================================== */
+
+document.getElementById(
+    "appointmentNext"
+).addEventListener(
+    "click",
+    function(){
+
+        const purpose =
+            document.getElementById(
+                "appointmentPurpose"
+            ).value;
+
+        const region =
+            document.getElementById(
+                "appointmentRegion"
+            ).value;
+
+        const branch =
+            document.getElementById(
+                "appointmentBranch"
+            ).value;
+
+        const date =
+            document.getElementById(
+                "appointmentDate"
+            ).value;
+
+        const time =
+            document.getElementById(
+                "appointmentTime"
+            ).value;
+
+
+        if(
+            !purpose ||
+            !region ||
+            !branch ||
+            !date ||
+            !time
+        ){
+
+            alert(
+                "Please complete all appointment details."
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Appointment details are ready for the next step."
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,4195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Contributions</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    font-family:"Montserrat",sans-serif;
+
+    background:#eaf6fc;
+
+    color:#555;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   FIXED HEADER
+===================================================== */
+
+.sticky-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    background:white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.dashboard-header{
+
+    height:75px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+}
+
+
+.menu-icon{
+
+    border:none;
+
+    background:none;
+
+    font-size:30px;
+
+    color:#285a9c;
+
+    cursor:pointer;
+
+}
+
+
+.dashboard-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    font-size:25px;
+
+    color:#285a9c;
+
+}
+
+
+.profile-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#ddd;
+
+}
+
+
+.profile-icon img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* =====================================================
+   MEMBER INFO
+===================================================== */
+
+.member-info{
+
+    background:white;
+
+    padding:12px 25px 15px;
+
+    border-top:1px solid #eee;
+
+}
+
+
+.member-name{
+
+    font-size:19px;
+
+    font-weight:400;
+
+    color:#444;
+
+}
+
+
+.member-number{
+
+    font-size:16px;
+
+    margin-top:4px;
+
+}
+
+
+.member-date{
+
+    margin-top:7px;
+
+    font-size:15px;
+
+    color:#315a9c;
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content{
+
+    width:100%;
+
+    max-width:1050px;
+
+    margin:0 auto;
+
+    padding:190px 20px 70px;
+
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.member-title{
+
+    font-size:14px;
+
+    color:#526987;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+/* MEMBER INFORMATION CONTAINER */
+
+.member-details{
+
+    width:100%;
+
+    max-width:none;
+
+    background:white;
+
+    border-radius:6px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.16);
+
+    margin-bottom:15px;
+
+}
+
+
+/* COVER */
+
+.cover{
+
+    height:145px;
+
+    background:
+    linear-gradient(
+        120deg,
+        #a9d8f3 0%,
+        #a9d8f3 27%,
+        #5eaddd 27%,
+        #5eaddd 45%,
+        #3497d1 45%,
+        #3497d1 63%,
+        #2784b9 63%,
+        #2784b9 70%,
+        #f3b176 70%,
+        #f3b176 100%
+    );
+
+}
+
+
+/* PROFILE CONTENT */
+
+.profile-content{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:0 20px 18px;
+
+    position:relative;
+
+}
+
+
+/* AVATAR */
+
+.avatar{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    margin-top:-38px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    background:#55a9df;
+
+}
+
+
+.avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.profile-text{
+
+    padding-top:13px;
+
+}
+
+
+.profile-text h2{
+
+    margin:0 0 8px;
+
+    font-size:20px;
+
+    font-weight:400;
+
+    color:#555;
+
+}
+
+
+.profile-info{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    font-size:12px;
+
+    color:#777;
+
+}
+
+
+.profile-info span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+}
+
+
+/* =====================================================
+   MEMBER TABS
+===================================================== */
+
+.member-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    margin:12px 0 15px;
+
+}
+
+
+.member-tab{
+
+    border:none;
+
+    background:transparent;
+
+    color:#526987;
+
+    padding:8px 13px;
+
+    border-radius:5px;
+
+    font-family:"Montserrat";
+
+    font-size:13px;
+
+    cursor:pointer;
+
+}
+
+
+.member-tab.active{
+
+    background:#3159a2;
+
+    color:white;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.2);
+
+}
+
+
+/* =====================================================
+   CONTRIBUTIONS CARD
+===================================================== */
+
+
+.contributions-section{
+
+    width:100%;
+
+    max-width:none;
+
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+
+}
+
+
+.section-title{
+
+    font-size:14px;
+
+    color:#555;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #eee;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTION LAYOUT
+===================================================== */
+
+.contribution-layout{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:35px;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTION MENU
+===================================================== */
+
+.contribution-menu{
+
+    width:220px;
+
+    flex-shrink:0;
+
+}
+
+
+.contribution-option{
+
+    padding:11px 15px;
+
+    background:#d9edf8;
+
+    color:#526987;
+
+    border-bottom:1px solid white;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+}
+
+
+.contribution-option:first-child{
+
+    background:#fff;
+
+    color:#555;
+
+}
+
+
+.contribution-option:hover{
+
+    background:#c8e5f4;
+
+}
+
+
+/* =====================================================
+   TABLE AREA
+===================================================== */
+
+.contribution-content{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+
+.entries-label{
+
+    font-size:11px;
+
+    color:#777;
+
+    margin-bottom:7px;
+
+}
+
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+table{
+
+    width:100%;
+
+    min-width:700px;
+
+    border-collapse:collapse;
+
+    font-size:12px;
+
+}
+
+
+th{
+
+    color:#777;
+
+    font-weight:500;
+
+    padding:7px 5px;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+}
+
+
+td{
+
+    padding:8px 5px;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+    color:#555;
+
+}
+
+
+tbody tr:nth-child(odd){
+
+    background:#e9eaeb;
+
+}
+
+
+tbody tr:nth-child(even){
+
+    background:#f2f2f2;
+
+}
+
+
+td:first-child{
+
+    font-weight:500;
+
+}
+
+
+/* =====================================================
+   TABLE FOOTER
+===================================================== */
+
+.table-footer{
+
+    margin-top:10px;
+
+    font-size:11px;
+
+    color:#777;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.pagination{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.pagination span{
+
+    cursor:pointer;
+
+}
+
+
+.pagination .page{
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:6px 9px;
+
+    border-radius:3px;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary{
+
+    margin-top:25px;
+
+    border-top:1px solid #eee;
+
+    padding-top:15px;
+
+}
+
+
+
+
+.summary-row{
+
+    display:flex;
+
+    border:1px solid #eee;
+
+    border-bottom:none;
+
+    font-size:12px;
+
+}
+
+
+.summary-row:last-child{
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+.summary-label{
+
+    width:55%;
+
+    padding:8px;
+
+    color:#555;
+
+}
+
+
+.summary-value{
+
+    width:45%;
+
+    padding:8px;
+
+    color:#555;
+
+}
+
+
+/* =====================================================
+   CALENDAR BUTTON
+===================================================== */
+
+.calendar{
+
+    position:fixed;
+
+    right:0;
+
+    top:200px;
+
+    background:#b9dcff;
+
+    color:#285a9c;
+
+    padding:15px 13px;
+
+    border-radius:12px 0 0 12px;
+
+    font-size:25px;
+
+    z-index:900;
+
+    opacity:.85;
+
+    cursor:pointer;
+
+}
+
+/* =====================================================
+   APPOINTMENT MODAL
+===================================================== */
+
+.appointment-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:11000;
+
+    padding:20px;
+
+}
+
+
+.appointment-overlay.show{
+
+    display:flex;
+
+}
+
+
+/* APPOINTMENT BOX */
+
+.appointment-box{
+
+    width:100%;
+
+    max-width:520px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:28px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+    position:relative;
+
+    animation:appointmentOpen .2s ease;
+
+}
+
+
+@keyframes appointmentOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* CLOSE BUTTON */
+
+.close-appointment{
+
+    position:absolute;
+
+    top:15px;
+
+    right:18px;
+
+    border:none;
+
+    background:none;
+
+    color:#777;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+
+.close-appointment:hover{
+
+    color:#285a9c;
+
+}
+
+
+/* TITLE */
+
+.appointment-box h2{
+
+    margin:0;
+
+    color:#315a9c;
+
+    font-size:20px;
+
+    font-weight:500;
+
+}
+
+
+.appointment-box h2 i{
+
+    margin-right:8px;
+
+}
+
+
+.appointment-box hr{
+
+    border:none;
+
+    border-top:1px solid #eee;
+
+    margin:18px 0;
+
+}
+
+
+.appointment-box h3{
+
+    margin:0 0 8px;
+
+    color:#555;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+
+.appointment-box p{
+
+    margin:0 0 20px;
+
+    color:#777;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+/* FORM CONTROLS */
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea{
+
+    width:100%;
+
+    padding:11px 12px;
+
+    margin-bottom:12px;
+
+    border:1px solid #d5d5d5;
+
+    border-radius:4px;
+
+    background:white;
+
+    color:#555;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    outline:none;
+
+}
+
+
+.appointment-box select:focus,
+.appointment-box input:focus,
+.appointment-box textarea:focus{
+
+    border-color:#5ca6d8;
+
+    box-shadow:0 0 0 2px rgba(92,166,216,.12);
+
+}
+
+
+.appointment-box textarea{
+
+    height:90px;
+
+    resize:none;
+
+}
+
+
+.next-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+}
+
+
+.next-btn:hover{
+
+    background:#264b8c;
+
+}
+/* =====================================================
+   SIDE MENU OVERLAY
+===================================================== */
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+
+}
+
+
+.menu-overlay.open{
+
+    display:block;
+
+}
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+.side-menu{
+
+    position:fixed;
+
+    top:0;
+
+    left:-390px;
+
+    width:370px;
+
+    max-width:88%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.2);
+
+    transition:.3s ease;
+
+    overflow-y:auto;
+
+}
+
+
+.side-menu.open{
+
+    left:0;
+
+}
+
+
+.side-menu-header{
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+.side-menu-header span{
+
+    font-size:25px;
+
+    color:#444;
+
+}
+
+
+.close-menu{
+
+    border:none;
+
+    background:none;
+
+    font-size:24px;
+
+    color:#999;
+
+    cursor:pointer;
+
+}
+
+
+.menu-items{
+
+    padding:15px 25px 30px;
+
+}
+
+
+.menu-item{
+
+    min-height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#315a9c;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    padding:10px;
+
+    border-radius:6px;
+
+}
+
+
+.menu-item:hover{
+
+    background:#eef6fc;
+
+}
+
+
+.menu-item i{
+
+    width:25px;
+
+    text-align:center;
+
+}
+
+
+.menu-group{
+
+    width:100%;
+
+}
+
+
+.submenu{
+
+    display:none;
+
+    padding-left:25px;
+
+}
+
+
+.submenu.show{
+
+    display:block;
+
+}
+
+
+.submenu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px 8px;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:16px;
+
+}
+
+
+.submenu a:hover{
+
+    background:#eef6fc;
+
+}
+
+
+.submenu a i{
+
+    width:25px;
+
+    color:#315a9c;
+
+}
+
+
+.arrow{
+
+    margin-left:auto;
+
+    font-size:13px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.demo-notice{
+
+    font-size:12px;
+
+    color:#777;
+
+    padding:20px 0;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+      /* APPOINTMENT MOBILE */
+
+.appointment-overlay{
+
+    padding:15px;
+
+}
+
+
+.appointment-box{
+
+    max-width:100%;
+
+    padding:22px 18px;
+
+    border-radius:7px;
+
+}
+
+
+.appointment-box h2{
+
+    font-size:17px;
+
+}
+
+
+.appointment-box h3{
+
+    font-size:13px;
+
+}
+
+
+.appointment-box p{
+
+    font-size:10px;
+
+}
+
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea{
+
+    font-size:11px;
+
+    padding:10px;
+
+}
+
+    /* HEADER */
+
+    .dashboard-header{
+
+        height:38px;
+
+        padding:0 10px;
+
+    }
+
+
+    .menu-icon{
+
+        font-size:20px;
+
+    }
+
+
+    .dashboard-actions{
+
+        gap:12px;
+
+        font-size:17px;
+
+    }
+
+
+    .profile-icon{
+
+        width:28px;
+
+        height:28px;
+
+    }
+
+
+    .member-info{
+
+        padding:7px 8px 8px;
+
+    }
+
+
+    .member-name{
+
+        font-size:9px;
+
+    }
+
+
+    .member-number{
+
+        font-size:9px;
+
+        margin-top:2px;
+
+    }
+
+
+    .member-date{
+
+        font-size:9px;
+
+        margin-top:3px;
+
+    }
+
+
+    /* MAIN */
+
+    .main-content{
+
+        padding:115px 8px 50px;
+
+    }
+
+
+    .member-title{
+
+        display:none;
+
+    }
+
+
+    /* PROFILE */
+
+    .member-details{
+
+        border-radius:4px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .cover{
+
+        height:80px;
+
+    }
+
+
+    .profile-content{
+
+        gap:10px;
+
+        padding:0 10px 10px;
+
+    }
+
+
+    .avatar{
+
+        width:58px;
+
+        height:58px;
+
+        border-width:4px;
+
+        margin-top:-30px;
+
+    }
+
+
+    .profile-text{
+
+        padding-top:8px;
+
+    }
+
+
+    .profile-text h2{
+
+        font-size:15px;
+
+        margin-bottom:7px;
+
+    }
+
+
+    .profile-info{
+
+        display:block;
+
+        font-size:9px;
+
+        line-height:1.8;
+
+    }
+
+
+    .profile-info span{
+
+        display:inline-flex;
+
+        margin-right:5px;
+
+    }
+
+
+    /* TABS */
+
+    .member-tabs{
+
+        margin:8px 0 12px;
+
+        gap:5px;
+
+    }
+
+
+    .member-tab{
+
+        font-size:10px;
+
+        padding:7px 10px;
+
+    }
+
+
+    /* CONTRIBUTIONS */
+
+    .contributions-section{
+
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+
+    }
+
+
+    .section-title{
+
+        font-size:12px;
+
+        margin-bottom:25px;
+
+    }
+
+
+    .contribution-layout{
+
+        gap:15px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .contribution-menu{
+
+        width:145px;
+
+    }
+
+
+    .contribution-option{
+
+        font-size:11px;
+
+        padding:9px 10px;
+
+        line-height:1.35;
+
+    }
+
+
+    .contribution-content{
+
+        width:calc(100% - 160px);
+
+        overflow:hidden;
+
+    }
+
+
+    .entries-label{
+
+        display:none;
+
+    }
+
+
+    .table-wrapper{
+
+        overflow-x:auto;
+
+        width:100%;
+
+    }
+
+
+    table{
+
+        min-width:560px;
+
+        font-size:10px;
+
+    }
+
+
+    th{
+
+        padding:6px 4px;
+
+    }
+
+
+    td{
+
+        padding:7px 4px;
+
+    }
+
+
+    .table-footer{
+
+        justify-content:center;
+
+        margin-top:10px;
+
+    }
+
+
+    .table-footer > span{
+
+        display:none;
+
+    }
+
+
+    .pagination{
+
+        gap:15px;
+
+    }
+
+
+    .summary{
+
+        margin-top:28px;
+
+    }
+
+
+    .summary-title{
+
+        font-size:10px;
+
+        padding:5px;
+
+        background:#eef3f5;
+
+    }
+
+
+    .summary-row{
+
+        font-size:10px;
+
+    }
+
+
+    .summary-label{
+
+        width:65%;
+
+        padding:8px;
+
+    }
+
+
+    .summary-value{
+
+        width:35%;
+
+        padding:8px;
+
+    }
+
+
+    /* CALENDAR */
+
+    .calendar{
+
+        top:290px;
+
+        padding:12px;
+
+        font-size:22px;
+
+        border-radius:10px 0 0 10px;
+
+    }
+
+
+    /* SIDE MENU */
+
+    .side-menu{
+
+        width:320px;
+
+    }
+
+
+    .side-menu-header{
+
+        height:60px;
+
+        padding:0 20px;
+
+    }
+
+
+    .side-menu-header span{
+
+        font-size:21px;
+
+    }
+
+
+    .menu-items{
+
+        padding:10px 18px 25px;
+
+    }
+
+
+    .menu-item{
+
+        min-height:50px;
+
+        font-size:16px;
+
+    }
+
+
+    .submenu a{
+
+        font-size:15px;
+
+        padding:11px 5px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media(max-width:380px){
+
+    .contribution-menu{
+
+        width:130px;
+
+    }
+
+
+    .contribution-content{
+
+        width:calc(100% - 145px);
+
+    }
+
+
+    .contribution-option{
+
+        font-size:10px;
+
+    }
+
+
+    table{
+
+        min-width:540px;
+
+        font-size:9px;
+
+    }
+
+
+    .summary-row{
+
+        font-size:9px;
+
+    }
+
+}
+
+/* =====================================================
+   PROFILE SIDE PANEL
+===================================================== */
+
+.profile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+
+}
+
+
+.profile-overlay.show{
+
+    display:block;
+
+}
+
+
+.profile-panel{
+
+    position:fixed;
+
+    top:0;
+
+    right:-400px;
+
+    width:390px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:-4px 0 15px rgba(0,0,0,.20);
+
+    transition:right .3s ease;
+
+    overflow-y:auto;
+
+    padding:80px 28px 30px;
+
+}
+
+
+.profile-panel.open{
+
+    right:0;
+
+}
+
+
+.profile-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:25px;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    color:#999;
+
+    cursor:pointer;
+
+}
+
+
+.profile-panel-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:40px;
+
+}
+
+
+.profile-panel-avatar{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+}
+
+
+.profile-panel-avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.profile-panel-name{
+
+    color:#59616b;
+
+    font-size:21px;
+
+    line-height:1.2;
+
+}
+
+
+.profile-panel-name span{
+
+    display:block;
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#777;
+
+}
+
+
+.profile-notice{
+
+    display:flex;
+
+    gap:8px;
+
+    background:#c7f0fb;
+
+    padding:14px 12px;
+
+    margin-bottom:25px;
+
+    color:#687887;
+
+    font-size:15px;
+
+    line-height:1.55;
+
+}
+
+
+.profile-notice i{
+
+    font-size:13px;
+
+}
+
+
+.profile-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.profile-links a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:14px 0;
+
+    text-decoration:none;
+
+    color:#687887;
+
+    font-size:17px;
+
+}
+
+
+.profile-links a i{
+
+    width:20px;
+
+    color:#38659b;
+
+    font-size:19px;
+
+}
+
+
+.profile-links a:hover{
+
+    color:#315a9c;
+
+}
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.notification-icon{
+    cursor:pointer;
+    position:relative;
+    z-index:2;
+}
+
+
+/* NOTIFICATION PANEL */
+
+.notification-panel{
+
+    position:absolute;
+
+    top:50px;
+    right:0;
+
+    width:460px;
+    max-width:calc(100vw - 30px);
+
+    background:#fff;
+
+    border-radius:6px;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.20);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:10002;
+}
+
+
+/* IMPORTANT:
+   CLOSED = COMPLETELY HIDDEN */
+
+.notification-panel:not(.show){
+    display:none !important;
+}
+
+
+/* OPEN */
+
+.notification-panel.show{
+    display:block !important;
+}
+
+
+/* TITLE */
+
+.notification-title{
+
+    font-size:30px;
+
+    font-weight:400;
+
+    color:#444;
+
+    padding:28px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+/* BODY */
+
+.notification-body{
+
+    padding:28px;
+
+}
+
+
+/* MESSAGE */
+
+.notification-message{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    background:#c9f1fb;
+
+    border-radius:5px;
+
+    padding:25px;
+
+    color:#607080;
+
+    font-size:18px;
+
+    line-height:1.55;
+
+}
+
+
+.notification-message i{
+
+    margin-top:4px;
+
+    font-size:18px;
+
+}
+
+
+/* BUTTON */
+
+.view-notifications{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:4px;
+
+    background:#315da8;
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+.view-notifications:hover{
+
+    background:#284f91;
+
+}
+
+
+/* =====================================================
+   NOTIFICATION MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .notification-panel{
+
+        position:fixed;
+
+        top:48px;
+
+        right:10px;
+
+        left:auto;
+
+        width:calc(100vw - 20px);
+
+        max-width:420px;
+
+        border-radius:6px;
+
+    }
+
+
+    .notification-title{
+
+        font-size:20px;
+
+        padding:18px;
+
+    }
+
+
+    .notification-body{
+
+        padding:18px;
+
+    }
+
+
+    .notification-message{
+
+        padding:16px;
+
+        font-size:13px;
+
+        line-height:1.5;
+
+    }
+
+
+    .view-notifications{
+
+        margin-top:18px;
+
+        padding:13px;
+
+        font-size:12px;
+
+    }
+
+}
+
+      /* =========================
+   COVERAGE HISTORY COLORS
+   ========================= */
+
+.coverage-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 35px;
+}
+
+/* Timeline line */
+.coverage-item::after {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: 30px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background: #dfe4e8;
+}
+
+/* Timeline circle - DEFAULT BLUE */
+.coverage-item::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #20a9d6;
+    border: 5px solid #d9f5fb;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 2nd COLOR - PURPLE */
+.coverage-item:nth-child(3)::before {
+    background: #4d4bc8;
+    border-color: #e7e6ff;
+}
+
+/* 3rd COLOR - ORANGE */
+.coverage-item:nth-child(4)::before {
+    background: #f2a515;
+    border-color: #fff0d5;
+}
+
+/* 4th COLOR - ORANGE */
+.coverage-item:nth-child(5)::before {
+    background: #f2a515;
+    border-color: #fff0d5;
+}
+.coverage-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+/* BLUE - first */
+.coverage-item:nth-child(2) .coverage-avatar {
+    background: #d9f7fc;
+    color: #28a9c5;
+}
+
+/* PURPLE - second */
+.coverage-item:nth-child(3) .coverage-avatar {
+    background: #e8e7ff;
+    color: #5957c8;
+}
+
+/* ORANGE - third and fourth */
+.coverage-item:nth-child(4) .coverage-avatar,
+.coverage-item:nth-child(5) .coverage-avatar {
+    background: #fff0d5;
+    color: #e8a21b;
+}
+
+      /* =====================================
+   INCREASE ALL TEXT SIZES (+2px)
+===================================== */
+
+body {
+    font-size: 18px;
+}
+
+/* Header */
+.member-name {
+    font-size: 24px;
+}
+
+.member-number {
+    font-size: 20px;
+}
+
+.member-date {
+    font-size: 19px;
+}
+
+/* Breadcrumb */
+.member-title {
+    font-size: 18px;
+}
+
+/* Member Information */
+.profile-text h2 {
+    font-size: 25px;
+}
+
+.profile-info {
+    font-size: 16px;
+}
+
+/* Tabs */
+.member-tab {
+    font-size: 17px;
+}
+
+/* Contributions container */
+.section-title {
+    font-size: 19px;
+}
+
+.contribution-option {
+    font-size: 17px;
+}
+
+/* Table */
+.entries-label {
+    font-size: 15px;
+}
+
+table {
+    font-size: 16px;
+}
+
+th,
+td {
+    padding: 10px 6px;
+}
+
+/* Table footer */
+.table-footer {
+    font-size: 15px;
+}
+
+/* Summary */
+.summary-title {
+    font-size: 17px;
+}
+
+.summary-row {
+    font-size: 16px;
+}
+
+/* Footer */
+.demo-notice {
+    font-size: 16px;
+}
+
+/* Appointment */
+.appointment-box h2 {
+    font-size: 25px;
+}
+
+.appointment-box h3 {
+    font-size: 20px;
+}
+
+.appointment-box p {
+    font-size: 17px;
+}
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea {
+    font-size: 17px;
+}
+
+.next-btn {
+    font-size: 18px;
+}
+
+/* =====================================
+   MOBILE FONT SIZES (+2px)
+===================================== */
+
+@media (max-width: 700px) {
+
+    .member-name {
+        font-size: 14px;
+    }
+
+    .member-number {
+        font-size: 13px;
+    }
+
+    .member-date {
+        font-size: 12px;
+    }
+
+    .profile-text h2 {
+        font-size: 19px;
+    }
+
+    .profile-info {
+        font-size: 13px;
+    }
+
+    .member-tab {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .contribution-option {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 8px 5px;
+    }
+
+    .table-footer {
+        font-size: 14px;
+    }
+
+    .summary-title {
+        font-size: 14px;
+    }
+
+    .summary-row {
+        font-size: 13px;
+    }
+
+    .demo-notice {
+        font-size: 14px;
+    }
+
+}
+
+      /* BLUE HIGHLIGHT SA ROW NG MONTHS */
+table thead tr {
+    background: #d9edf7 !important;
+}
+
+table thead th {
+    background: #d9edf7 !important;
+    color: #315b78 !important;
+}
+
+
+
+/* =====================================
+   CONTRIBUTION TABLE COLORS
+===================================== */
+
+table thead tr,
+table thead th {
+    background-color: #d9edf7 !important;
+    color: #315b78 !important;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2 !important;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ffffff !important;
+}
+
+/* YEAR COLUMN */
+
+table tbody tr:nth-child(odd) td:first-child {
+    background-color: #d9d9d9 !important;
+}
+
+table tbody tr:nth-child(even) td:first-child {
+    background-color: #eeeeee !important;
+}
+
+
+/* =====================================
+   PROFILE NAME ALIGNMENT
+   NAME BESIDE THE AVATAR
+===================================== */
+
+.member-details .profile-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+}
+
+.member-details .avatar {
+    flex-shrink: 0 !important;
+}
+
+.member-details .profile-text {
+    display: block !important;
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-top: 13px !important;
+    text-align: left !important;
+}
+
+.member-details .profile-text h2 {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.member-details .profile-info {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .member-details .profile-content {
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        padding: 0 10px 10px !important;
+    }
+
+    .member-details .avatar {
+        width: 58px !important;
+        height: 58px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .member-details .profile-text {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding-top: 8px !important;
+        text-align: left !important;
+    }
+
+    .member-details .profile-text h2 {
+        width: 100% !important;
+        margin: 0 0 7px 0 !important;
+        font-size: 19px !important;
+        text-align: left !important;
+    }
+
+    .member-details .profile-info {
+        display: block !important;
+        text-align: left !important;
+        font-size: 13px !important;
+    }
+
+    .member-details .profile-info span {
+        justify-content: flex-start !important;
+    }
+
+}
+      /* BLUE HIGHLIGHT FOR SUMMARY TITLE */
+
+.summary > .summary-title {
+    display: inline-block !important;
+    width: auto !important;
+    background: #d9edf7 !important;
+    color: #315b78 !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    padding: 6px 10px !important;
+    margin: 0 0 10px 0 !important;
+    border-radius: 3px !important;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .summary > .summary-title {
+        font-size: 14px !important;
+        padding: 5px 8px !important;
+    }
+}
+      
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FIXED HEADER
+===================================================== -->
+
+<header class="sticky-header">
+
+
+    <div class="dashboard-header">
+
+
+        <button
+        class="menu-icon"
+        id="menuButton">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+     <div class="dashboard-actions">
+
+    <div class="notification-wrapper">
+
+        <i class="fa-solid fa-bell notification-icon"
+           id="notificationButton"></i>
+
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="notification-title">
+                Notification
+            </div>
+
+            <div class="notification-body">
+
+                <div class="notification-message">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        You currently have no notifications.<br>
+                        Your 10 most recent notifications<br>
+                        will be displayed here.
+                    </span>
+
+                </div>
+
+                <button class="view-notifications">
+                    VIEW ALL NOTIFICATIONS
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-icon" id="profileButton">
+
+        <img src="Lprof.jpeg" alt="Profile">
+
+    </div>
+
+</div>
+
+    </div>
+
+
+    <div class="member-info">
+
+
+        <div class="member-name">
+
+            SANTIAGO, MARK LESTER NARAG
+
+        </div>
+
+
+        <div class="member-number">
+
+            01-3599294-4
+
+        </div>
+
+
+        <div class="member-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="currentDate">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+<!-- =====================================================
+     PROFILE SIDE PANEL
+===================================================== -->
+
+<div class="profile-overlay" id="profileOverlay"></div>
+
+<div class="profile-panel" id="profilePanel">
+
+    <button class="profile-close" id="profileClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="profile-panel-header">
+
+        <div class="profile-panel-avatar">
+            <img src="Lprof.jpeg" alt="Profile">
+        </div>
+
+        <div class="profile-panel-name">
+
+            <div>
+                SANTIAGO, MARK
+            </div>
+
+            <div>
+                LESTER NARAG
+            </div>
+
+            <span>
+                01-3599294-4
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-notice">
+
+        <div>
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+
+            Your password will expire on
+            Feb 14, 2027
+
+            <br>
+
+            Your last login was on Oct 11, 2026
+            09:24:43 PM through the SSS Website
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="#">
+            <i class="fa-solid fa-user"></i>
+            <span>My Details</span>
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            <span>Change Password</span>
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-user-lock"></i>
+            <span>Setup Time-based One-Time Password</span>
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            <span>Contact Us</span>
+        </a>
+
+        <a href="index.html" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+        </a>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
+
+<div
+class="calendar"
+onclick="openAppointment()">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+
+
+<!-- =====================================================
+     APPOINTMENT
+===================================================== -->
+
+<div
+class="appointment-overlay"
+id="appointmentModal">
+
+    <div class="appointment-box">
+
+        <button
+        class="close-appointment"
+        onclick="closeAppointment()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <h2>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Set Appointment
+
+        </h2>
+
+
+        <hr>
+
+
+        <h3>
+
+            Say goodbye to waiting in line!
+
+        </h3>
+
+
+        <p>
+
+            Experience ultimate convenience by setting your appointments online with just a few clicks.
+
+        </p>
+
+
+        <select>
+            <option>Select Purpose</option>
+        </select>
+
+
+        <select>
+            <option>Select Region</option>
+        </select>
+
+
+        <select>
+            <option>Select Branch</option>
+        </select>
+
+
+        <input type="date">
+
+
+        <select>
+            <option>Select Time</option>
+        </select>
+
+
+        <textarea
+        placeholder="Concern(s)">
+        </textarea>
+
+
+        <button class="next-btn">
+
+            Next
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="member-details">
+
+
+        <div class="cover"></div>
+
+
+        <div class="profile-content">
+
+
+            <div class="avatar">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </div>
+
+
+            <div class="profile-text">
+
+
+                <h2>
+
+                    SANTIAGO, MARK LESTER NARAG
+
+                </h2>
+
+
+                <div class="profile-info">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        SS Number 01-3599294-4
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Your password will expire on Feb 14, 2027
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                        Your last login was on Oct 11, 2026 09:24:43 PM through the SSS Website
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MEMBER TABS -->
+
+    <div class="member-tabs">
+
+
+        <button
+        class="member-tab"
+        onclick="location.href='memberinfo.html'">
+
+            <i class="fa-solid fa-user"></i>
+
+            Member Details
+
+        </button>
+
+
+        <button
+        class="member-tab active">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            My Contributions
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- CONTRIBUTION SECTION -->
+
+    <section class="contributions-section">
+
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            &nbsp; Contributions
+
+        </div>
+
+
+
+        <div class="contribution-layout">
+
+
+            <!-- LEFT MENU -->
+
+            <div class="contribution-menu">
+
+
+                <div class="contribution-option">
+
+                    MONTHLY CONTRIBUTIONS
+
+                </div>
+
+
+                <div class="contribution-option">
+
+                    SE/VM CONTRIBUTIONS
+
+                </div>
+
+
+                <div class="contribution-option">
+
+                    FLEXI-FUND
+
+                </div>
+
+
+                <div class="contribution-option">
+
+                    MANDATORY PROVIDENT FUND
+
+                </div>
+
+
+                <div class="contribution-option">
+
+                    PENSION BOOSTER
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="contribution-content">
+
+
+                <div class="entries-label">
+
+                    10 &nbsp; entries per page
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>YEAR</th>
+
+                                <th>JAN</th>
+                                <th>FEB</th>
+                                <th>MAR</th>
+                                <th>APR</th>
+                                <th>MAY</th>
+                                <th>JUN</th>
+                                <th>JUL</th>
+                                <th>AUG</th>
+                                <th>SEP</th>
+                                <th>OCT</th>
+                                <th>NOV</th>
+                                <th>DEC</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="contributionBody">
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+
+                <div class="table-footer">
+
+
+                    <span>
+
+                        Showing 1 to 1 of 1 entries
+
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <span>‹</span>
+
+                        <span>‹</span>
+
+                        <span class="page">1</span>
+
+                        <span>›</span>
+
+                        <span>›</span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+
+            <div class="summary-title">
+
+                SUMMARY
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <div class="summary-label">
+
+                    (A) Total Number of Contributions Displayed
+
+                </div>
+
+                <div class="summary-value">
+
+                    107
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <div class="summary-label">
+
+                    (B) Total Number of Contributions not Displayed
+
+                </div>
+
+                <div class="summary-value">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <div class="summary-label">
+
+                    Total Number of Contributions Posted (A) + (B)
+
+                </div>
+
+                <div class="summary-value">
+
+                    107
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <div class="summary-label">
+
+                    Total Amount of Contributions
+
+                </div>
+
+                <div class="summary-value">
+
+                    123,488.00
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="demo-notice">
+
+        @2024 Social Security System
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     SIDE MENU OVERLAY
+===================================================== -->
+
+<div
+class="menu-overlay"
+id="menuOverlay">
+</div>
+
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<div
+class="side-menu"
+id="sideMenu">
+
+
+    <div class="side-menu-header">
+
+
+        <span>Menu</span>
+
+
+        <button
+        class="close-menu"
+        id="closeMenu">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="menu-items">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+        href="dashboard.html"
+        class="menu-item">
+
+            <i class="fa-solid fa-border-all"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+
+        <!-- MEMBER INFORMATION -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="memberSubmenu">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <span>Member Information</span>
+
+           
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="memberSubmenu">
+
+
+                <a href="memberinfo.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Member Details</span>
+
+                </a>
+
+
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>My Contributions</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <span>Update Security Questions</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="serviceSubmenu">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <span>Services</span>
+
+             
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="serviceSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>Disbursement Account</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Benefit Re-disbursement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                    <span>Auto Debit Arrangement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-roof"></i>
+
+                    <span>Pension Booster</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <span>RTC/CPO Reference Number Inquiry</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Set Appointment</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <span>MySSS Card</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOANS -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="loanSubmenu">
+
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                <span>Loans</span>
+
+           
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="loanSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Salary Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                    <span>Calamity/Emergency Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Pension Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loan Penalty Condonation</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BENEFITS -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="benefitsSubmenu">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <span>Benefits</span>
+
+         
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="benefitsSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-pregnant"></i>
+
+                    <span>Maternity Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>Unemployment Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-bed-pulse"></i>
+
+                    <span>Sickness Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-wheelchair"></i>
+
+                    <span>Disability Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Retirement Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>Funeral Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-monument"></i>
+
+                    <span>Death Claim</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAYMENT REFERENCE NUMBER -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="prnSubmenu">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <span>Payment Reference Number</span>
+
+              
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="prnSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Contributions</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loans</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SIGN OUT -->
+
+        <a
+        href="index.html"
+        class="menu-item"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Sign Out</span>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   CONTRIBUTION DATA
+===================================================== */
+
+const contributionData = {
+
+    2026: {
+        Jan:"1,466.00",
+        Feb:"1,466.00",
+        Mar:"1,466.00",
+        Apr:"1,466.00",
+        May:"1,466.00",
+        Jun:"1,466.00",
+        Jul:"1,466.00",
+        Aug:"1,466.00",
+        Sep:"1,466.00",
+        Oct:"1,466.00",
+        Nov:"0.00",
+        Dec:"0.00"
+    },
+
+    2025: {
+        Jan:"1,361.00",
+        Feb:"1,361.00",
+        Mar:"1,361.00",
+        Apr:"1,466.00",
+        May:"1,466.00",
+        Jun:"1,466.00",
+        Jul:"1,466.00",
+        Aug:"1,466.00",
+        Sep:"1,466.00",
+        Oct:"1,466.00",
+        Nov:"1,466.00",
+        Dec:"1,466.00"
+    },
+
+    2024: {
+        Jan:"1,250.00",
+        Feb:"1,250.00",
+        Mar:"1,361.00",
+        Apr:"1,361.00",
+        May:"1,361.00",
+        Jun:"1,361.00",
+        Jul:"1,361.00",
+        Aug:"1,361.00",
+        Sep:"1,361.00",
+        Oct:"1,361.00",
+        Nov:"1,361.00",
+        Dec:"1,361.00"
+    },
+
+    2023: {
+        Jan:"1,144.00",
+        Feb:"1,144.00",
+        Mar:"1,250.00",
+        Apr:"1,250.00",
+        May:"1,250.00",
+        Jun:"1,250.00",
+        Jul:"1,250.00",
+        Aug:"1,250.00",
+        Sep:"1,250.00",
+        Oct:"1,250.00",
+        Nov:"1,250.00",
+        Dec:"1,250.00"
+    },
+
+    2022: {
+        Jan:"0.00",
+        Feb:"1,144.00",
+        Mar:"1,144.00",
+        Apr:"1,144.00",
+        May:"1,144.00",
+        Jun:"1,144.00",
+        Jul:"1,144.00",
+        Aug:"1,144.00",
+        Sep:"1,144.00",
+        Oct:"1,144.00",
+        Nov:"1,144.00",
+        Dec:"1,144.00"
+    },
+
+    2021: {
+        Jan:"0.00",
+        Feb:"1,130.00",
+        Mar:"1,130.00",
+        Apr:"1,130.00",
+        May:"0.00",
+        Jun:"0.00",
+        Jul:"0.00",
+        Aug:"0.00",
+        Sep:"0.00",
+        Oct:"0.00",
+        Nov:"0.00",
+        Dec:"0.00"
+    },
+
+    2020: {
+        Jan:"1,020.00",
+        Feb:"1,020.00",
+        Mar:"1,020.00",
+        Apr:"1,020.00",
+        May:"1,130.00",
+        Jun:"1,130.00",
+        Jul:"1,130.00",
+        Aug:"1,130.00",
+        Sep:"1,130.00",
+        Oct:"1,130.00",
+        Nov:"1,130.00",
+        Dec:"1,130.00"
+    },
+
+    2019: {
+        Jan:"914.00",
+        Feb:"914.00",
+        Mar:"914.00",
+        Apr:"914.00",
+        May:"1,020.00",
+        Jun:"1,020.00",
+        Jul:"1,020.00",
+        Aug:"1,020.00",
+        Sep:"1,020.00",
+        Oct:"1,020.00",
+        Nov:"1,020.00",
+        Dec:"1,020.00"
+    },
+
+    2018: {
+        Jan:"806.00",
+        Feb:"806.00",
+        Mar:"806.00",
+        Apr:"806.00",
+        May:"914.00",
+        Jun:"914.00",
+        Jul:"914.00",
+        Aug:"914.00",
+        Sep:"914.00",
+        Oct:"914.00",
+        Nov:"914.00",
+        Dec:"914.00"
+    },
+
+    2017: {
+        Jan:"0.00",
+        Feb:"0.00",
+        Mar:"806.00",
+        Apr:"806.00",
+        May:"806.00",
+        Jun:"806.00",
+        Jul:"806.00",
+        Aug:"806.00",
+        Sep:"806.00",
+        Oct:"806.00",
+        Nov:"806.00",
+        Dec:"806.00"
+    }
+
+};
+
+
+/* =====================================================
+   LOAD CONTRIBUTION TABLE
+===================================================== */
+
+const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+];
+
+
+function loadContributionTable(){
+
+    const tbody =
+        document.getElementById(
+            "contributionBody"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    Object.keys(contributionData)
+    .sort((a,b) => b-a)
+    .forEach(year => {
+
+        const row =
+            document.createElement("tr");
+
+
+        const yearCell =
+            document.createElement("td");
+
+
+        yearCell.textContent =
+            year;
+
+
+        row.appendChild(yearCell);
+
+
+        months.forEach(month => {
+
+            const cell =
+                document.createElement("td");
+
+
+            cell.textContent =
+                contributionData[year][month];
+
+
+            row.appendChild(cell);
+
+        });
+
+
+        tbody.appendChild(row);
+
+    });
+
+}
+
+
+/* =====================================================
+   REAL TIME DATE
+===================================================== */
+
+function updateDateTime(){
+
+    const now =
+        new Date();
+
+
+    const options = {
+
+        weekday:"long",
+
+        year:"numeric",
+
+        month:"long",
+
+        day:"numeric",
+
+        hour:"numeric",
+
+        minute:"2-digit",
+
+        second:"2-digit",
+
+        hour12:true
+
+    };
+
+
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        now.toLocaleString(
+            "en-US",
+            options
+        );
+
+}
+
+
+updateDateTime();
+
+
+setInterval(
+    updateDateTime,
+    1000
+);
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+const menuButton =
+    document.getElementById(
+        "menuButton"
+    );
+
+
+const sideMenu =
+    document.getElementById(
+        "sideMenu"
+    );
+
+
+const menuOverlay =
+    document.getElementById(
+        "menuOverlay"
+    );
+
+
+const closeMenu =
+    document.getElementById(
+        "closeMenu"
+    );
+
+
+function openMenu(){
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("open");
+
+}
+
+
+function closeSideMenu(){
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("open");
+
+}
+
+
+menuButton.onclick =
+    openMenu;
+
+
+closeMenu.onclick =
+    closeSideMenu;
+
+
+menuOverlay.onclick =
+    closeSideMenu;
+
+
+/* =====================================================
+   SUBMENU
+===================================================== */
+
+const menuToggles =
+    document.querySelectorAll(".menu-toggle");
+
+
+menuToggles.forEach(toggle => {
+
+    toggle.addEventListener("click", function(){
+
+        const targetId =
+            this.dataset.target;
+
+        const target =
+            document.getElementById(targetId);
+
+
+        menuToggles.forEach(other => {
+
+            if(other !== this){
+
+                const otherId =
+                    other.dataset.target;
+
+                const otherMenu =
+                    document.getElementById(otherId);
+
+                otherMenu.classList.remove("show");
+
+            }
+
+        });
+
+
+        target.classList.toggle("show");
+
+    });
+
+});
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+      /* =====================================================
+   PROFILE PANEL
+===================================================== */
+
+const profileIcon =
+    document.querySelector(".profile-icon");
+
+const profilePanel =
+    document.getElementById("profilePanel");
+
+const profileOverlay =
+    document.getElementById("profileOverlay");
+
+const profileClose =
+    document.getElementById("profileClose");
+
+
+function openProfile(){
+
+    profilePanel.classList.add("open");
+
+    profileOverlay.classList.add("show");
+
+}
+
+
+function closeProfile(){
+
+    profilePanel.classList.remove("open");
+
+    profileOverlay.classList.remove("show");
+
+}
+
+
+profileIcon.addEventListener("click", function(){
+
+    notificationPanel.classList.remove("show");
+
+    openProfile();
+
+});
+
+
+profileClose.addEventListener(
+    "click",
+    closeProfile
+);
+
+
+profileOverlay.addEventListener(
+    "click",
+    closeProfile
+);
+
+      /* =====================================================
+   NOTIFICATION PANEL
+===================================================== */
+
+const notificationButton =
+    document.getElementById("notificationButton");
+
+const notificationPanel =
+    document.getElementById("notificationPanel");
+
+
+notificationButton.addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+    notificationPanel.classList.toggle("show");
+
+});
+
+
+notificationPanel.addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+});
+
+
+document.addEventListener("click", function(){
+
+    notificationPanel.classList.remove("show");
+
+});
+
+
+
+/* =====================================================
+   APPOINTMENT
+===================================================== */
+
+function openAppointment(){
+
+    document
+    .getElementById(
+        "appointmentModal"
+    )
+    .classList.add("show");
+
+}
+
+
+function closeAppointment(){
+
+    document
+    .getElementById(
+        "appointmentModal"
+    )
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadContributionTable();
+
+</script>
+
+
+</body>
+
+</html>

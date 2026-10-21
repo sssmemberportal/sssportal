@@ -1,0 +1,3010 @@
+<!-- DASHBOARD -->
+<title>SSS Member Portal</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+   @media(max-width:700px){
+
+    .services-list{
+        grid-template-columns:repeat(4, 1fr);
+
+        column-gap:5px;
+        row-gap:20px;
+
+        padding:12px 3px 10px;
+    }
+
+    .service-item{
+        gap:5px;
+
+        min-height:55px;
+
+        font-size:8px;
+    }
+
+    .service-item i{
+        font-size:19px;
+
+        width:35px;
+
+        height:25px;
+    }
+
+    .service-item span{
+        font-size:8px;
+
+        line-height:1.25;
+    }
+
+}
+
+/* ================================
+   DASHBOARD MAIN
+================================ */
+
+body{
+    margin:0;
+    font-family:"Montserrat",sans-serif;
+    background:#eaf6fc;
+    color:#526170;
+}
+
+.dashboard-container{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:190px 20px 50px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+
+/* ================================
+   DASHBOARD CARD
+================================ */
+
+.dashboard-card{
+    background:#fff;
+    border-radius:6px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+    position:relative;
+}
+
+
+/* ================================
+   VIEW CONTRIBUTIONS
+================================ */
+
+.dashboard-card:first-child{
+    grid-column:1 / -1;
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:18px;
+    color:#4f5963;
+
+    margin-bottom:16px;
+}
+
+.card-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e4f7fc;
+    color:#3575a8;
+
+    border-radius:10px;
+
+    font-size:20px;
+}
+
+
+.dashboard-image{
+    width:100%;
+    height:300px;
+
+    border-radius:5px;
+
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* CONTRIBUTIONS IMAGE */
+
+.contributions-image{
+    background-image:
+    url("VContrib.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+/* ================================
+   AMOUNT
+================================ */
+
+.contribution-amount{
+    margin-top:15px;
+
+    font-size:21px;
+    font-weight:500;
+
+    color:#555;
+}
+
+.amount-label{
+    font-size:12px;
+    color:#777;
+    margin-top:2px;
+}
+
+
+/* ================================
+   CONTRIBUTION BOTTOM
+================================ */
+
+.contribution-bottom{
+    display:flex;
+    align-items:center;
+
+    margin-top:15px;
+
+    gap:10px;
+}
+
+.contribution-number{
+    min-width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #b7e5e9;
+    border-radius:5px;
+
+    color:#55a6a0;
+    font-size:13px;
+}
+
+.contribution-description{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+
+    color:#4fa49d;
+    font-size:12px;
+}
+
+.contribution-description small{
+    color:#888;
+    font-size:9px;
+}
+
+
+/* ================================
+   BLUE BUTTON
+================================ */
+
+.blue-button{
+    position:absolute;
+
+    right:18px;
+    bottom:18px;
+
+    background:#315da8;
+    color:white;
+
+    padding:9px 14px;
+
+    border-radius:4px;
+
+    text-decoration:none;
+
+    font-size:11px;
+}
+
+.blue-button:hover{
+    background:#274d8d;
+}
+
+
+/* ================================
+   PAY CONTRIBUTIONS / LOANS
+================================ */
+
+.dashboard-card:nth-child(2),
+.dashboard-card:nth-child(3){
+    min-height:280px;
+}
+
+.pay-contributions-image,
+.loans-image{
+    height:130px;
+
+    background-size:cover;
+    background-position:center;
+
+    border-radius:5px;
+}
+   .pay-contributions-image{
+    background-image:url("images.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+/* ================================
+   LOAN NOTICE
+================================ */
+
+.loan-notice{
+    display:flex;
+    gap:8px;
+
+    margin-top:12px;
+
+    background:#c8f2fb;
+
+    padding:12px;
+
+    border-radius:5px;
+
+    font-size:11px;
+    line-height:1.5;
+
+    color:#607887;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services-card{
+    grid-column:1 / -1;
+}
+
+.services-list{
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    column-gap:25px;
+    row-gap:28px;
+
+    padding:20px 20px 15px;
+
+    width:100%;
+
+    box-sizing:border-box;
+}
+
+
+/* SERVICE ITEM */
+
+.service-item{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:9px;
+
+    color:#315a9c;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    font-weight:400;
+
+    line-height:1.3;
+
+    min-height:70px;
+}
+
+
+/* SERVICE ICON */
+
+.service-item i{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#315a9c;
+
+    font-size:30px;
+
+    line-height:1;
+
+    height:36px;
+
+    width:50px;
+}
+
+
+/* SERVICE TEXT */
+
+.service-item span{
+    display:block;
+
+    color:#315a9c;
+
+    font-size:12px;
+
+    font-weight:400;
+
+    text-align:center;
+
+    white-space:normal;
+}
+
+
+/* =========================================
+   SERVICES TITLE ICON
+========================================= */
+
+.services-icon{
+    background:#fff4d6 !important;
+
+    color:#e8ad22 !important;
+}
+
+.services-icon i{
+    color:#e8ad22 !important;
+}
+/* ================================
+   QUICK LINKS
+================================ */
+
+.dashboard-card:last-child{
+    grid-column:1 / -1;
+}
+
+.quick-link{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    color:#52749a;
+
+    text-decoration:none;
+
+    font-size:12px;
+}
+
+.quick-link-icon{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e0f3fa;
+
+    color:#3974a5;
+
+    border-radius:5px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:700px){
+
+    .dashboard-container{
+        padding:105px 8px 40px;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:7px;
+    }
+
+
+    .dashboard-card{
+        padding:10px;
+
+        border-radius:4px;
+    }
+
+
+    .dashboard-card:first-child{
+        grid-column:1 / -1;
+    }
+
+
+    .card-title{
+        font-size:13px;
+
+        gap:6px;
+
+        margin-bottom:8px;
+    }
+
+
+    .card-icon{
+        width:28px;
+        height:28px;
+
+        font-size:13px;
+
+        border-radius:6px;
+    }
+
+
+    .dashboard-image{
+        height:170px;
+    }
+
+
+    .contribution-amount{
+        font-size:16px;
+    }
+
+
+    .amount-label{
+        font-size:8px;
+    }
+
+
+    .contribution-number{
+        min-width:28px;
+        height:28px;
+
+        font-size:10px;
+    }
+
+
+    .contribution-description{
+        font-size:9px;
+    }
+
+
+    .blue-button{
+        right:10px;
+        bottom:10px;
+
+        font-size:8px;
+
+        padding:7px 9px;
+    }
+
+
+    .pay-contributions-image,
+    .loans-image{
+        height:80px;
+    }
+
+
+    .loan-notice{
+        font-size:8px;
+
+        padding:8px;
+    }
+
+
+    .services-card{
+        grid-column:1 / -1;
+    }
+
+
+    .services-list{
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:18px 5px;
+    }
+
+
+    .service-item{
+        font-size:8px;
+
+        gap:5px;
+    }
+
+
+    .service-item i{
+        font-size:19px;
+    }
+
+
+    .dashboard-card:last-child{
+        grid-column:1 / -1;
+    }
+
+}
+
+
+/* ================================
+   NOTIFICATION
+================================ */
+
+.notification-panel{
+    position:fixed;
+
+    top:75px;
+    right:90px;
+
+    width:460px;
+
+    background:white;
+
+    border-radius:7px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.22);
+
+    z-index:99999;
+
+    display:none;
+
+    overflow:hidden;
+}
+
+.notification-panel.show{
+    display:block;
+}
+
+.notification-title{
+    padding:28px;
+
+    font-size:28px;
+
+    color:#444;
+
+    border-bottom:1px solid #eee;
+}
+
+.notification-box{
+    margin:28px;
+
+    padding:25px;
+
+    background:#c8f2fb;
+
+    border-radius:5px;
+
+    color:#607887;
+
+    font-size:17px;
+
+    line-height:1.55;
+}
+
+.notification-button{
+    margin:0 28px 28px;
+
+    padding:17px;
+
+    background:#315da8;
+
+    color:white;
+
+    text-align:center;
+
+    border-radius:4px;
+
+    font-size:15px;
+}
+
+
+/* ================================
+   PROFILE PANEL
+================================ */
+
+.profile-panel{
+    position:fixed;
+
+    top:0;
+    right:-400px;
+
+    width:390px;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:100000;
+
+    box-shadow:-5px 0 18px rgba(0,0,0,.20);
+
+    padding:30px;
+
+    transition:right .3s ease;
+
+    overflow-y:auto;
+}
+
+.profile-panel.show{
+    right:0;
+}
+
+.close-profile{
+    position:absolute;
+
+    top:18px;
+    right:20px;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+
+    color:#777;
+
+    cursor:pointer;
+}
+
+.profile-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.profile-top img{
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+}
+
+.profile-top h3{
+    margin:0;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    color:#59636e;
+}
+
+.profile-top p{
+    margin:5px 0 0;
+
+    font-size:13px;
+
+    color:#777;
+}
+
+.profile-info{
+    margin-top:25px;
+
+    padding:15px;
+
+    background:#c8f2fb;
+
+    border-radius:5px;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    color:#607887;
+}
+
+.profile-links{
+    margin-top:15px;
+}
+
+.profile-links a{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 0;
+
+    color:#607887;
+
+    text-decoration:none;
+
+    font-size:15px;
+}
+
+.profile-links a i{
+    width:22px;
+
+    color:#315a9c;
+}
+
+
+/* ================================
+   MOBILE NOTIFICATION
+================================ */
+
+@media(max-width:700px){
+
+    .notification-panel{
+        top:38px;
+        right:5px;
+
+        width:calc(100vw - 10px);
+
+        max-width:420px;
+    }
+
+    .notification-title{
+        font-size:20px;
+
+        padding:18px;
+    }
+
+    .notification-box{
+        margin:18px;
+
+        padding:18px;
+
+        font-size:12px;
+    }
+
+    .notification-button{
+        margin:0 18px 18px;
+
+        padding:12px;
+
+        font-size:11px;
+    }
+
+
+    .profile-panel{
+        width:320px;
+        max-width:90%;
+    }
+
+}
+
+   /* =========================================
+   FIX MEMBER INFORMATION SUBMENU
+========================================= */
+
+.menu-group{
+    width:100%;
+}
+
+.member-toggle{
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+    width:100%;
+    box-sizing:border-box;
+    cursor:pointer;
+}
+
+
+/* SUBMENU CONTAINER */
+
+.submenu{
+    display:none;
+
+    width:100%;
+
+    padding:4px 0 8px 52px;
+
+    box-sizing:border-box;
+
+    background:#fff;
+}
+
+
+/* WHEN OPEN */
+
+.submenu.show{
+    display:block;
+}
+
+
+/* SUBMENU LINKS */
+
+.submenu .submenu-item{
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:14px !important;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:11px 15px !important;
+
+    margin:0 !important;
+
+    color:#315a9c !important;
+
+    background:transparent !important;
+
+    text-decoration:none !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:14px !important;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    border:none;
+
+}
+
+
+/* REMOVE PURPLE / UNDERLINE */
+
+.submenu .submenu-item:link,
+.submenu .submenu-item:visited,
+.submenu .submenu-item:hover,
+.submenu .submenu-item:active{
+    color:#315a9c !important;
+    text-decoration:none !important;
+}
+
+
+/* SUBMENU ICON */
+
+.submenu .submenu-item i{
+    width:20px;
+
+    min-width:20px;
+
+    text-align:center;
+
+    color:#315a9c !important;
+
+    font-size:14px;
+}
+
+
+/* HOVER */
+
+.submenu .submenu-item:hover{
+    background:#f1f8fc !important;
+
+    border-radius:5px;
+}
+
+
+/* DISABLED ITEM */
+
+.submenu .submenu-item.disabled{
+    color:#aab2c0 !important;
+
+    cursor:default;
+
+    background:transparent !important;
+}
+
+.submenu .submenu-item.disabled i{
+    color:#aab2c0 !important;
+}
+
+
+/* =========================================
+   SIDE MENU GENERAL FIX
+========================================= */
+
+.side-menu .menu-items{
+    width:100%;
+}
+
+.side-menu .menu-item{
+    box-sizing:border-box;
+}
+
+.side-menu .menu-item span{
+    white-space:normal;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .submenu{
+        padding-left:38px;
+        padding-top:3px;
+        padding-bottom:6px;
+    }
+
+    .submenu .submenu-item{
+        padding:10px 10px !important;
+
+        font-size:12px !important;
+
+        gap:10px !important;
+    }
+
+    .submenu .submenu-item i{
+        width:17px;
+        min-width:17px;
+        font-size:12px;
+    }
+
+}
+
+   /* =========================================
+   BELL & AVATAR
+========================================= */
+
+.profile-icon{
+    width:48px !important;
+    height:48px !important;
+    min-width:48px;
+    min-height:48px;
+
+    padding:0 !important;
+    border:none !important;
+    border-radius:50% !important;
+
+    background:#ddd !important;
+
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden !important;
+    cursor:pointer;
+}
+
+.profile-icon img{
+    width:100% !important;
+    height:100% !important;
+
+    object-fit:cover !important;
+    border-radius:50% !important;
+
+    display:block;
+}
+
+.notification-icon{
+    border:none !important;
+    background:none !important;
+
+    color:#2f6db3 !important;
+
+    font-size:21px !important;
+
+    padding:5px !important;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.notification-icon i{
+    color:#2f6db3 !important;
+    font-size:21px !important;
+}
+
+.dashboard-header .profile-icon:hover{
+    background:#ddd !important;
+}
+
+.dashboard-header .notification-icon:hover{
+    background:transparent !important;
+    color:#2f6db3 !important;
+}
+
+   /* ================================
+   FLOATING CALENDAR BUTTON
+================================ */
+
+.floating-calendar{
+    position:fixed;
+
+    right:10px;
+    top:32%;
+
+    width:42px;
+    height:42px;
+
+    background:#d9f2ff;
+    color:#315da8;
+
+    border:none;
+    border-radius:4px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:9000;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+}
+
+.floating-calendar:hover{
+    background:#c7eaff;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .floating-calendar{
+        right:7px;
+        top:29%;
+
+        width:38px;
+        height:38px;
+
+        font-size:17px;
+    }
+
+}
+
+   /* =========================================
+   SET APPOINTMENT MODAL
+========================================= */
+
+.appointment-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.48);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:99999;
+
+    padding:20px;
+
+    box-sizing:border-box;
+}
+
+.appointment-overlay.show{
+    display:flex;
+}
+
+
+/* MODAL */
+
+.appointment-modal{
+    width:100%;
+    max-width:650px;
+
+    max-height:92vh;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+
+    overflow:auto;
+
+    font-family:"Montserrat",sans-serif;
+}
+
+
+/* HEADER */
+
+.appointment-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:28px 30px 18px 30px;
+}
+
+
+.appointment-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#315d9d;
+
+    font-size:24px;
+
+    font-weight:500;
+}
+
+
+.appointment-title i{
+    color:#315d9d;
+
+    font-size:25px;
+}
+
+
+.appointment-close{
+    border:none;
+
+    background:transparent;
+
+    color:#777;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    padding:4px 8px;
+}
+
+
+.appointment-close:hover{
+    color:#333;
+}
+
+
+/* CONTENT */
+
+.appointment-content{
+    padding:0 35px 35px 35px;
+}
+
+
+.appointment-content h3{
+    margin:8px 0 10px;
+
+    color:#444;
+
+    font-size:18px;
+
+    font-weight:500;
+}
+
+
+.appointment-description{
+    margin:0 0 25px;
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* SELECT / DATE */
+
+.appointment-select{
+    width:100%;
+
+    height:48px;
+
+    margin-bottom:14px;
+
+    padding:0 18px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:5px;
+
+    background:#fff;
+
+    color:#777;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:14px;
+
+    box-sizing:border-box;
+
+    outline:none;
+}
+
+
+.appointment-select:focus{
+    border-color:#75b9d6;
+
+    box-shadow:0 0 4px rgba(67,160,200,.18);
+}
+
+
+/* DATE */
+
+.appointment-date{
+    color:#777;
+
+    appearance:auto;
+}
+
+
+/* TEXT AREA */
+
+.appointment-remarks{
+    width:100%;
+
+    height:110px;
+
+    margin-bottom:20px;
+
+    padding:15px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:5px;
+
+    resize:none;
+
+    box-sizing:border-box;
+
+    font-family:"Montserrat",sans-serif;
+
+    outline:none;
+}
+
+
+.appointment-remarks:focus{
+    border-color:#75b9d6;
+}
+
+
+/* NEXT BUTTON */
+
+.appointment-next{
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#3563a9;
+
+    color:#fff;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+}
+
+
+.appointment-next:hover{
+    background:#2e5795;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .appointment-overlay{
+        padding:12px;
+    }
+
+    .appointment-modal{
+        max-width:100%;
+
+        max-height:94vh;
+
+        border-radius:10px;
+    }
+
+    .appointment-header{
+        padding:20px 20px 12px;
+    }
+
+    .appointment-title{
+        font-size:19px;
+
+        gap:10px;
+    }
+
+    .appointment-title i{
+        font-size:21px;
+    }
+
+    .appointment-close{
+        font-size:22px;
+    }
+
+    .appointment-content{
+        padding:0 20px 22px;
+    }
+
+    .appointment-content h3{
+        font-size:16px;
+    }
+
+    .appointment-description{
+        font-size:12px;
+
+        line-height:1.6;
+
+        margin-bottom:18px;
+    }
+
+    .appointment-select{
+        height:46px;
+
+        font-size:13px;
+
+        margin-bottom:12px;
+    }
+
+    .appointment-remarks{
+        height:100px;
+    }
+
+    .appointment-next{
+        height:46px;
+
+        font-size:14px;
+    }
+
+}
+
+   /* =========================================
+   PAY CONTRIBUTIONS NOTICE
+========================================= */
+
+.contribution-notice{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:8px !important;
+
+    margin-top:12px !important;
+
+    background:#c8f2fb !important;
+
+    padding:12px !important;
+
+    border-radius:5px !important;
+
+    color:#607887 !important;
+
+    font-size:11px !important;
+
+    line-height:1.5 !important;
+}
+
+.contribution-notice i{
+    color:#607887 !important;
+    font-size:12px !important;
+    margin-top:2px;
+}
+
+.contribution-notice span{
+    color:#607887 !important;
+}
+
+.contribution-notice b{
+    font-weight:500 !important;
+}
+
+
+/* =========================================
+   SERVICES — MATCH FIRST SCREENSHOT
+========================================= */
+
+.services-list{
+    display:grid !important;
+
+    grid-template-columns:repeat(4, 1fr) !important;
+
+    gap:25px 15px !important;
+
+    padding:15px 5px !important;
+}
+
+.service-item{
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:8px !important;
+
+    text-align:center !important;
+
+    color:#315a9c !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:11px !important;
+
+    line-height:1.3 !important;
+}
+
+.service-item i{
+    display:block !important;
+
+    width:auto !important;
+    height:auto !important;
+
+    color:#315a9c !important;
+
+    font-size:25px !important;
+
+    line-height:1 !important;
+}
+
+.service-item span{
+    display:block !important;
+
+    color:#315a9c !important;
+
+    font-size:11px !important;
+
+    font-weight:400 !important;
+
+    text-decoration:none !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .contribution-notice{
+        font-size:8px !important;
+
+        padding:8px !important;
+
+        line-height:1.5 !important;
+    }
+
+    .contribution-notice i{
+        font-size:9px !important;
+    }
+
+    .services-list{
+        grid-template-columns:repeat(4,1fr) !important;
+
+        gap:18px 5px !important;
+
+        padding:12px 3px !important;
+    }
+
+    .service-item{
+        gap:5px !important;
+
+        font-size:8px !important;
+    }
+
+    .service-item i{
+        font-size:19px !important;
+    }
+
+    .service-item span{
+        font-size:8px !important;
+    }
+}
+
+   /* =========================================
+   QUICK LINKS - MATCH SCREENSHOT
+========================================= */
+
+.quick-link{
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:14px 15px;
+
+    color:#52749a;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    line-height:1.35;
+}
+
+.quick-link-icon{
+    width:42px;
+    height:42px;
+
+    min-width:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#e0f3fa;
+
+    color:#3974a5;
+
+    border-radius:4px;
+
+    font-size:18px;
+}
+
+.quick-link span{
+    color:#52749a;
+}
+
+@media(max-width:700px){
+
+    .quick-link{
+        gap:10px;
+
+        padding:10px 5px;
+
+        font-size:10px;
+    }
+
+    .quick-link-icon{
+        width:32px;
+        height:32px;
+
+        min-width:32px;
+
+        font-size:14px;
+    }
+
+}
+
+   /* =====================================================
+   DASHBOARD SIDE MENU - SAME AS CONTRIBUTIONS
+===================================================== */
+
+.menu-group{
+    width:100%;
+}
+
+.menu-toggle{
+    display:flex !important;
+    align-items:center !important;
+    gap:15px !important;
+    width:100%;
+    cursor:pointer;
+}
+
+.menu-toggle i{
+    width:25px;
+    min-width:25px;
+    text-align:center;
+    color:#315a9c;
+}
+
+.submenu{
+    display:none;
+    width:100%;
+    padding-left:25px;
+    box-sizing:border-box;
+}
+
+.submenu.show{
+    display:block;
+}
+
+.submenu a{
+    display:flex !important;
+    align-items:center !important;
+    gap:14px !important;
+    width:100%;
+    box-sizing:border-box;
+
+    padding:12px 8px !important;
+
+    text-decoration:none !important;
+
+    color:#526987 !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:16px !important;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    border:none;
+}
+
+.submenu a:hover{
+    background:#eef6fc !important;
+    color:#315a9c !important;
+    text-decoration:none !important;
+}
+
+.submenu a i{
+    width:25px;
+    min-width:25px;
+    text-align:center;
+    color:#315a9c !important;
+}
+
+@media(max-width:700px){
+
+    .submenu{
+        padding-left:25px;
+    }
+
+    .submenu a{
+        font-size:15px !important;
+        padding:11px 5px !important;
+        gap:14px !important;
+    }
+
+}
+
+</style>
+<div class="fixed-top">
+<div class="dashboard-header">
+   <button class="menu-icon" id="menuButton" type="button">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+    <div class="dashboard-actions">
+        <button class="notification-icon" id="notificationIcon">
+    <i class="fa-solid fa-bell"></i>
+</button>
+
+        <button class="profile-icon" id="profileIcon">
+
+    <img src="Lprof.jpeg" alt="Profile">
+
+</button>
+    </div>
+</div>
+
+<div class="member-info">
+    <div class="member-name">SANTIAGO, MARK LESTER NARAG</div>
+    <div class="member-number">01-3599294-4</div>
+
+    <div class="member-date">
+    <i class="fa-solid fa-calendar-days"></i>
+    <span id="realTime"></span>
+</div>
+</div>
+</div>
+
+
+<div class="dashboard-container">
+
+    <!-- VIEW CONTRIBUTIONS -->
+
+    <div class="dashboard-card">
+
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+
+            <span>View Contributions</span>
+        </div>
+
+        <div class="dashboard-image contributions-image"></div>
+
+        <div class="contribution-amount">
+            ₱ 120,647.00
+        </div>
+
+        <div class="amount-label">
+            Total amount of contributions
+        </div>
+
+        <div class="contribution-bottom">
+
+            <div class="contribution-number">
+                105
+            </div>
+
+            <div class="contribution-description">
+                <span>↑ Total number of contribution posted</span>
+                <small>AS OF SEP 2026</small>
+            </div>
+
+        </div>
+
+        <a href="contributions.html" class="blue-button">
+    View Contributions
+</a>
+
+    </div>
+
+
+    <!-- PAY CONTRIBUTIONS -->
+
+
+<div class="dashboard-card">
+
+    <div class="card-title">
+        <div class="card-icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
+
+        <span>Pay Contributions</span>
+    </div>
+
+    <div class="dashboard-image pay-contributions-image"></div>
+
+    <div class="loan-notice contribution-notice">
+        <i class="fa-solid fa-circle-info"></i>
+
+        <span>
+            You don't have a generated PRN to pay your
+            contribution yet. You can create one by
+            <b>Generating a PRN →</b>
+        </span>
+    </div>
+
+</div>
+
+
+    <!-- PAY LOANS -->
+
+    <div class="dashboard-card">
+
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+
+            <span>Pay Loans</span>
+        </div>
+
+        <div class="dashboard-image loans-image"></div>
+
+        <div class="loan-notice">
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                Are you planning to pay for your loan?
+                You haven't generated a PRN for payment yet.
+                You can create one by
+                <b>Generating a PRN →</b>
+            </span>
+        </div>
+
+    </div>
+
+
+   <!-- SERVICES -->
+
+<div class="dashboard-card services-card">
+
+    <div class="card-title">
+        <div class="card-icon services-icon">
+            <i class="fa-solid fa-hand-point-up"></i>
+        </div>
+
+        <span>Services</span>
+    </div>
+
+    <div class="services-list">
+
+        <!-- ROW 1 -->
+
+        <div class="service-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Salary Loan</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-chair"></i>
+            <span>Pension Loan</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-house-tsunami"></i>
+            <span>Calamity/Emergency Loan</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Loan Condonation</span>
+        </div>
+
+
+        <!-- ROW 2 -->
+
+        <div class="service-item">
+            <i class="fa-solid fa-person-pregnant"></i>
+            <span>Maternity Benefit</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-briefcase-medical"></i>
+            <span>Unemployment Benefit</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-user-nurse"></i>
+            <span>Sickness Benefit</span>
+        </div>
+
+        <div class="service-item">
+            <i class="fa-solid fa-wheelchair"></i>
+            <span>Disability Benefit</span>
+        </div>
+
+
+        <!-- ROW 3 -->
+
+        <div class="service-item">
+            <i class="fa-solid fa-chair"></i>
+            <span>Retirement Benefit</span>
+        </div>
+
+       <div class="service-item">
+    <i class="fa-solid fa-ribbon"></i>
+    <span>Funeral Benefit</span>
+</div>
+
+<div class="service-item">
+    <i class="fa-solid fa-cross"></i>
+    <span>Death Benefit</span>
+</div>
+
+    </div>
+
+</div>
+
+<!-- QUICK LINKS -->
+
+<div class="dashboard-card">
+
+    <div class="card-title">
+
+        <div class="card-icon">
+            <i class="fa-solid fa-link"></i>
+        </div>
+
+        <span>Quick Links</span>
+
+    </div>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+        </div>
+
+        <span>
+            Payment Reference Number (PRN) Loans
+        </span>
+
+    </a>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <span>
+            Disbursement Account Enrollment Module
+        </span>
+
+    </a>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-coins"></i>
+        </div>
+
+        <span>
+            Pension Booster
+        </span>
+
+    </a>
+
+</div>
+
+</div> <!-- END DASHBOARD CONTAINER -->
+
+<!-- FLOATING CALENDAR -->
+
+<button class="floating-calendar" id="floatingCalendar" type="button">
+    <i class="fa-solid fa-calendar-days"></i>
+</button>
+
+<!-- ================================
+     SET APPOINTMENT MODAL
+================================ -->
+
+<div class="appointment-overlay" id="appointmentOverlay">
+
+    <div class="appointment-modal">
+
+        <!-- HEADER -->
+        <div class="appointment-header">
+
+            <div class="appointment-title">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Set Appointment</span>
+            </div>
+
+            <button class="appointment-close" id="appointmentClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="appointment-content">
+
+            <h3>Say goodbye to waiting in line!</h3>
+
+            <p class="appointment-description">
+                Experience ultimate convenience by setting your appointments online with just a few clicks.
+            </p>
+
+
+            <!-- PURPOSE -->
+
+            <select id="appointmentPurpose" class="appointment-select">
+                <option value="">Select Purpose</option>
+                <option>Member Inquiry</option>
+                <option>SSS Number / Membership</option>
+                <option>Benefits</option>
+                <option>Loans</option>
+                <option>Contribution</option>
+                <option>Other Services</option>
+            </select>
+
+
+            <!-- REGION -->
+
+            <select id="appointmentRegion" class="appointment-select">
+                <option value="">Select Region</option>
+                <option>National Capital Region (NCR)</option>
+                <option>Region I</option>
+                <option>Region II</option>
+                <option>Region III</option>
+                <option>Region IV-A</option>
+                <option>Region IV-B</option>
+                <option>Region V</option>
+                <option>Region VI</option>
+                <option>Region VII</option>
+                <option>Region VIII</option>
+                <option>Region IX</option>
+                <option>Region X</option>
+                <option>Region XI</option>
+                <option>Region XII</option>
+                <option>CAR</option>
+                <option>CARAGA</option>
+                <option>BARMM</option>
+            </select>
+
+
+            <!-- BRANCH -->
+
+            <select id="appointmentBranch" class="appointment-select">
+                <option value="">Select Branch</option>
+                <option>SSS Main Office</option>
+                <option>SSS Branch</option>
+                <option>SSS Service Office</option>
+            </select>
+
+
+            <!-- DATE -->
+
+            <input
+                type="date"
+                id="appointmentDate"
+                class="appointment-select appointment-date"
+            >
+
+
+            <!-- TIME -->
+
+            <select id="appointmentTime" class="appointment-select">
+                <option value="">Select Time</option>
+                <option>8:00 AM - 9:00 AM</option>
+                <option>9:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 11:00 AM</option>
+                <option>11:00 AM - 12:00 PM</option>
+                <option>1:00 PM - 2:00 PM</option>
+                <option>2:00 PM - 3:00 PM</option>
+                <option>3:00 PM - 4:00 PM</option>
+            </select>
+
+
+            <!-- REMARKS -->
+
+            <textarea
+                id="appointmentRemarks"
+                class="appointment-remarks"
+                placeholder=""
+            ></textarea>
+
+
+            <!-- NEXT -->
+
+            <button class="appointment-next" id="appointmentNext">
+                <span>Next</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<div class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+
+        <span>Menu</span>
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="menu-items">
+
+        <!-- DASHBOARD -->
+
+        <a
+            href="dashboard.html"
+            class="menu-item">
+
+            <i class="fa-solid fa-border-all"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- =================================================
+             MEMBER INFORMATION
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="memberSubmenu">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <span>Member Information</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="memberSubmenu">
+
+                <a href="memberinfo.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Member Details</span>
+
+                </a>
+
+
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>My Contributions</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <span>Update Security Questions</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SERVICES
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="serviceSubmenu">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <span>Services</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="serviceSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>Disbursement Account</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Benefit Re-disbursement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                    <span>Auto Debit Arrangement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-roof"></i>
+
+                    <span>Pension Booster</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <span>RTC/CPO Reference Number Inquiry</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Set Appointment</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <span>MySSS Card</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LOANS
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="loanSubmenu">
+
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                <span>Loans</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="loanSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Salary Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                    <span>Calamity/Emergency Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Pension Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loan Penalty Condonation</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BENEFITS
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="benefitsSubmenu">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <span>Benefits</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="benefitsSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-pregnant"></i>
+
+                    <span>Maternity Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>Unemployment Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-bed-pulse"></i>
+
+                    <span>Sickness Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-wheelchair"></i>
+
+                    <span>Disability Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Retirement Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>Funeral Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-monument"></i>
+
+                    <span>Death Claim</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAYMENT REFERENCE NUMBER
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="prnSubmenu">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <span>Payment Reference Number</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="prnSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Contributions</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loans</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SIGN OUT
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="menu-item"
+            onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Sign Out</span>
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- PROFILE PANEL -->
+
+<div class="profile-panel" id="profilePanel">
+
+    <button class="close-profile" id="closeProfile">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="profile-top">
+
+        <img src="Lprof.jpeg">
+
+        <div>
+            <h3>SANTIAGO, MARK LESTER NARAG</h3>
+            <p>01-3599294-4</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-info">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Your password will expire on Feb 14, 2027
+        <br>
+        Your last login was on Sep 15, 2026
+        <br>
+        03:54:52 PM through the SSS Website
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+            <i class="fa-solid fa-user"></i>
+            My Details
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            Change Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-user-lock"></i>
+            Setup Time-based One-Time Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+
+        <a href="index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </a>
+
+
+    </div>
+
+</div>
+
+<!-- NOTIFICATION PANEL -->
+
+<div class="notification-panel" id="notificationPanel">
+
+    <div class="notification-title">
+        Notification
+    </div>
+
+
+    <div class="notification-box">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        You currently have no notifications.
+
+        <br>
+
+        Your 10 most recent notifications will be displayed here.
+
+    </div>
+
+
+    <div class="notification-button">
+
+        VIEW ALL NOTIFICATIONS
+
+    </div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const floatingCalendar =
+        document.getElementById("floatingCalendar");
+
+    const appointmentOverlay =
+        document.getElementById("appointmentOverlay");
+
+    const appointmentClose =
+        document.getElementById("appointmentClose");
+
+    const appointmentNext =
+        document.getElementById("appointmentNext");
+
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const sideMenu =
+        document.getElementById("sideMenu");
+
+    const menuOverlay =
+        document.getElementById("menuOverlay");
+
+    const closeMenu =
+        document.getElementById("closeMenu");
+
+
+    const profileIcon =
+        document.getElementById("profileIcon");
+
+    const profilePanel =
+        document.getElementById("profilePanel");
+
+    const closeProfile =
+        document.getElementById("closeProfile");
+
+
+    const notificationIcon =
+        document.getElementById("notificationIcon");
+
+    const notificationPanel =
+        document.getElementById("notificationPanel");
+
+
+    /* =====================================================
+       FLOATING CALENDAR
+    ===================================================== */
+
+    if(floatingCalendar && appointmentOverlay){
+
+        floatingCalendar.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            appointmentOverlay.classList.add("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLOSE APPOINTMENT
+    ===================================================== */
+
+    if(appointmentClose && appointmentOverlay){
+
+        appointmentClose.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            appointmentOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLICK OUTSIDE APPOINTMENT
+    ===================================================== */
+
+    if(appointmentOverlay){
+
+        appointmentOverlay.addEventListener("click", function(e){
+
+            if(e.target === appointmentOverlay){
+
+                appointmentOverlay.classList.remove("show");
+
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       APPOINTMENT NEXT
+    ===================================================== */
+
+    if(appointmentNext){
+
+        appointmentNext.addEventListener("click", function(){
+
+            const purpose =
+                document.getElementById("appointmentPurpose").value;
+
+            const region =
+                document.getElementById("appointmentRegion").value;
+
+            const branch =
+                document.getElementById("appointmentBranch").value;
+
+            const date =
+                document.getElementById("appointmentDate").value;
+
+            const time =
+                document.getElementById("appointmentTime").value;
+
+
+            if(
+                !purpose ||
+                !region ||
+                !branch ||
+                !date ||
+                !time
+            ){
+
+                alert("Please complete all appointment details.");
+
+                return;
+
+            }
+
+
+            alert("Appointment details are ready for the next step.");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SIDE MENU
+    ===================================================== */
+
+    function openMenu(){
+
+        if(sideMenu){
+
+            sideMenu.classList.add("open");
+
+        }
+
+        if(menuOverlay){
+
+            menuOverlay.classList.add("open");
+
+        }
+
+    }
+
+
+    function closeSideMenu(){
+
+        if(sideMenu){
+
+            sideMenu.classList.remove("open");
+
+        }
+
+        if(menuOverlay){
+
+            menuOverlay.classList.remove("open");
+
+        }
+
+    }
+
+
+    if(menuButton){
+
+        menuButton.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            openMenu();
+
+        });
+
+    }
+
+
+    if(closeMenu){
+
+        closeMenu.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            closeSideMenu();
+
+        });
+
+    }
+
+
+    if(menuOverlay){
+
+        menuOverlay.addEventListener("click", function(){
+
+            closeSideMenu();
+
+        });
+
+    }
+
+
+    /* =====================================================
+       ALL SUBMENUS
+    ===================================================== */
+
+    const menuToggles =
+        document.querySelectorAll(".menu-toggle");
+
+
+    menuToggles.forEach(function(toggle){
+
+        toggle.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+
+            const targetId =
+                this.getAttribute("data-target");
+
+
+            const targetMenu =
+                document.getElementById(targetId);
+
+
+            if(!targetMenu){
+
+                return;
+
+            }
+
+
+            /* CLOSE OTHER SUBMENUS */
+
+            menuToggles.forEach(function(otherToggle){
+
+                if(otherToggle !== toggle){
+
+                    const otherId =
+                        otherToggle.getAttribute("data-target");
+
+
+                    const otherMenu =
+                        document.getElementById(otherId);
+
+
+                    if(otherMenu){
+
+                        otherMenu.classList.remove("show");
+
+                    }
+
+                }
+
+            });
+
+
+            /* OPEN / CLOSE CURRENT SUBMENU */
+
+            targetMenu.classList.toggle("show");
+
+        });
+
+    });
+
+
+    /* =====================================================
+       PROFILE
+    ===================================================== */
+
+    if(profileIcon && profilePanel){
+
+        profileIcon.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+
+            /* CLOSE NOTIFICATION */
+
+            if(notificationPanel){
+
+                notificationPanel.classList.remove("show");
+
+            }
+
+
+            /* OPEN PROFILE */
+
+            profilePanel.classList.add("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLOSE PROFILE
+    ===================================================== */
+
+    if(closeProfile && profilePanel){
+
+        closeProfile.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            profilePanel.classList.remove("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       NOTIFICATION
+    ===================================================== */
+
+    if(notificationIcon && notificationPanel){
+
+        notificationIcon.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+
+            /* CLOSE PROFILE */
+
+            if(profilePanel){
+
+                profilePanel.classList.remove("show");
+
+            }
+
+
+            /* TOGGLE NOTIFICATION */
+
+            notificationPanel.classList.toggle("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       OUTSIDE CLICK
+    ===================================================== */
+
+    document.addEventListener("click", function(e){
+
+        /* NOTIFICATION */
+
+        if(
+            notificationPanel &&
+            notificationIcon &&
+            !notificationPanel.contains(e.target) &&
+            !notificationIcon.contains(e.target)
+        ){
+
+            notificationPanel.classList.remove("show");
+
+        }
+
+
+        /* PROFILE */
+
+        if(
+            profilePanel &&
+            profileIcon &&
+            !profilePanel.contains(e.target) &&
+            !profileIcon.contains(e.target)
+        ){
+
+            profilePanel.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
+<script>
+function updateTime(){
+
+    const now = new Date();
+
+    const options = {
+        timeZone: "Asia/Manila",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+    };
+
+    document.getElementById("realTime").textContent =
+        new Intl.DateTimeFormat("en-US", options).format(now);
+}
+
+updateTime();
+
+setInterval(updateTime,1000);
+</script>
